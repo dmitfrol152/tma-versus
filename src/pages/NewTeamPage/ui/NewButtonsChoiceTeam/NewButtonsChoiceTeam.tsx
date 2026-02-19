@@ -29,6 +29,7 @@ export function NewButtonsChoiceTeam({
           onClickButton={() => {
             if (isStartTour && stepIndex === 0) {
               setIsStartTour(false);
+              document.body.style.overflow = "";
               navigate("/team");
             }
             setIsButtonActiveTeam("1");
@@ -46,6 +47,7 @@ export function NewButtonsChoiceTeam({
           onClickButton={() => {
             if (isStartTour && stepIndex === 0) {
               setIsStartTour(false);
+              document.body.style.overflow = "";
               navigate("/team");
             }
             setIsButtonActiveTeam("2");

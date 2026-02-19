@@ -35,6 +35,7 @@ export function NewStatisticsTeamItem({
               onClickButton={() => {
                 if (isStartTour && stepIndex === 0) {
                   setIsStartTour(false);
+                  document.body.style.overflow = "";
                   navigate("/team");
                 }
                 setCurrentActiveStatus(item.id);
