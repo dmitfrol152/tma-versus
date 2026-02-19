@@ -1,0 +1,21 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.clansLight {
+  position: absolute;
+  top: -110px;
+  left: 40px;
+  width: 272px;
+  height: 192px;
+  transform: rotate(-4deg);
+  filter: blur(45px);
+
+  &__green {
+    background-color: variables.$color-green-2;
+  }
+  &__pink {
+    background-color: variables.$color-pink-2;
+  }
+  &__white {
+    background-color: variables.$color-white-12;
+  }
+}

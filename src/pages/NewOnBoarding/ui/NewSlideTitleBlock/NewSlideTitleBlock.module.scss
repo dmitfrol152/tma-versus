@@ -1,0 +1,50 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.slideTitle {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  z-index: 1;
+
+  &__title {
+    margin: 0 0 -4px 0px;
+    padding: 0;
+
+    font-family: variables.$ff-secondary;
+    font-size: 32px;
+    line-height: 40px;
+    color: variables.$color-milk;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    margin: 0 0 4px 0px;
+    font-weight: 400;
+    font-family: variables.$ff-main;
+    font-size: 32px;
+    line-height: 40px;
+    color: variables.$color-milk;
+  }
+
+  &__target {
+    font-family: variables.$ff-secondary;
+    font-size: 32px;
+    line-height: 40px;
+    color: variables.$color-milk;
+    text-align: end;
+  }
+}
+
+.slideTitleWelcome {
+  max-width: 334px;
+}
+
+.slideTitleSeason {
+  max-width: 326px;
+}
+
+.slideTitleVictory {
+  max-width: 352px;
+}

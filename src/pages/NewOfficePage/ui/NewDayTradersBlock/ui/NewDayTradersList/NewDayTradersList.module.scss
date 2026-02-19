@@ -1,0 +1,15 @@
+.dayTradersList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}

@@ -1,0 +1,1 @@
+export { SharePayment } from "./SharePayment";

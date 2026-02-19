@@ -1,0 +1,33 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.marqueeInfo {
+  padding: 16px 0;
+  margin: 0 -16px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+
+  background-color: variables.$color-gray-dark2;
+  border-top: 1px solid variables.$color-gray-middle;
+  border-bottom: 1px solid variables.$color-gray-middle;
+
+  &__text {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: -0.01px;
+    color: variables.$color-yellow;
+  }
+
+  &__slash {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: -0.99px;
+    color: variables.$color-gray-middle2;
+  }
+}

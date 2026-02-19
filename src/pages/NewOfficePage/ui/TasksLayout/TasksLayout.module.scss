@@ -1,0 +1,71 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.tasksLayout {
+  padding: 8px 0 0;
+
+  &__empty {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__emptyText {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -1px;
+    color: variables.$color-white;
+  }
+
+  &__title {
+    margin: 0 0 24px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    max-width: 291px;
+  }
+
+  &__titleText {
+    margin: 0;
+    padding: 0;
+
+    font-family: variables.$ff-main;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -1px;
+    color: variables.$color-white;
+  }
+
+  &__titleTime {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -1px;
+    color: variables.$color-gray-middle2;
+  }
+
+  &__btns {
+    margin-bottom: 14px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__tour {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__tourOnboarding {
+    position: relative;
+    z-index: 100;
+  }
+}

@@ -1,0 +1,25 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.clansBackground__green {
+  position: absolute;
+  opacity: 0.2;
+  mix-blend-mode: luminosity;
+  top: 20px;
+  right: -1px;
+  width: 62px;
+  height: 72px;
+}
+
+.clansBackground__pink {
+  position: absolute;
+  opacity: 0.2;
+  mix-blend-mode: luminosity;
+  top: 20px;
+  right: -2px;
+  width: 48px;
+  height: 70px;
+}
+
+.isStartTour {
+  filter: grayscale(1);
+}

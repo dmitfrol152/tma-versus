@@ -1,0 +1,26 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.buttonsContainerUi {
+  margin: 0;
+  padding: 4px 8px;
+  list-style-type: none;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  background-color: variables.$color-gray-dark2;
+  width: 100%;
+
+  &__item {
+    width: 100%;
+  }
+}
+
+.paddingTen {
+  padding: 10px;
+}
+
+.paddingFourEight {
+  padding: 4px 8px;
+}

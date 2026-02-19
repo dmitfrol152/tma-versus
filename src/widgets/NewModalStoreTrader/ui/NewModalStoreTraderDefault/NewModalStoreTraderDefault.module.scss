@@ -1,0 +1,304 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.modalStoreTraderDefault {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__wrapper {
+    padding: 24px 8px;
+
+    position: absolute;
+    bottom: var(--app-padding-bottom);
+    left: -4px;
+    right: -4px;
+    overflow: hidden;
+
+    min-height: 418px;
+
+    display: flex;
+    flex-direction: column;
+    background-color: variables.$color-black;
+  }
+
+  &__image {
+    margin-bottom: 12px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 114px;
+
+    z-index: 10;
+  }
+
+  &__imageSrc {
+    width: 70px;
+    z-index: 1;
+  }
+
+  &__imageIcon {
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 287px;
+    height: 285px;
+    color: variables.$color-white-12;
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 16px;
+
+    font-family: variables.$ff-main;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.99px;
+    text-align: center;
+    color: variables.$color-white;
+  }
+
+  &__info {
+    background-color: variables.$color-gray-dark2;
+    z-index: 10;
+  }
+
+  &__infoDescription {
+    padding: 24px 16px;
+    margin-bottom: 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+
+    border-bottom: 1px solid variables.$color-gray-middle3;
+  }
+
+  &__infoText {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: -0.99px;
+    color: variables.$color-gray;
+  }
+
+  &__infoCoin {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__infoCoinIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  &__infoCoinText {
+    font-family: variables.$ff-main;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -1px;
+    color: variables.$color-white;
+  }
+
+  &__infoButtons {
+    margin: 0 8px 12px;
+    padding: 7px 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: variables.$color-gray-dark;
+    border: 1px solid variables.$color-gray-middle4;
+  }
+
+  &__infoButtonsBlockLeft {
+    margin-right: 8px;
+    padding: 1px 0;
+
+    width: 24px;
+    height: 24px;
+  }
+
+  &__infoButtonsBlockSub {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      width: 12px;
+      height: 1px;
+      background-color: variables.$color-blue;
+    }
+  }
+
+  &__infoButtonsBlockRight {
+    margin-left: 8px;
+    padding: 1px 0;
+
+    width: 24px;
+    height: 24px;
+  }
+
+  &__infoButtonsBlockAdd {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      width: 12px;
+      height: 1px;
+      background-color: variables.$color-blue;
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      width: 1px;
+      height: 12px;
+      background-color: variables.$color-blue;
+    }
+  }
+
+  &__infoButtonsBlockBtn {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__infoButtonsText {
+    position: relative;
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    color: variables.$color-white;
+    width: 100%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 27px;
+      background-color: variables.$color-gray-middle4;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 27px;
+      background-color: variables.$color-gray-middle4;
+    }
+  }
+
+  &__infoButtonsBtn {
+    padding: 16px;
+    width: 100%;
+
+    font-family: variables.$ff-main;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: variables.$color-white;
+    letter-spacing: -0.99px;
+  }
+
+  &__light {
+    position: absolute;
+    top: -305px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 330px;
+    height: 330px;
+    filter: blur(200px);
+    background-color: variables.$color-blue;
+  }
+
+  &__infoBtn {
+    padding: 0 8px;
+  }
+
+  &__close {
+    padding: 10px;
+
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+
+  &__closeIcon {
+    width: 24px;
+    height: 24px;
+  }
+}

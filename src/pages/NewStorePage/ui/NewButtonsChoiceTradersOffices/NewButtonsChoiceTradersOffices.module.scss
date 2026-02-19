@@ -1,0 +1,16 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.buttonsChoiceTradersOffices {
+  margin-bottom: 10px;
+
+  &--tour {
+    z-index: 175;
+  }
+}
+
+.newPadding {
+  padding: 10px;
+
+  font-size: 18px;
+  line-height: 20px;
+}

@@ -1,0 +1,22 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.dayTradersItemBackground__green {
+  position: absolute;
+  opacity: 0.2;
+  mix-blend-mode: luminosity;
+  top: 0;
+  right: 0;
+  width: 62px;
+  height: 72px;
+}
+
+.dayTradersItemBackground__pink,
+.dayTradersItemBackground__default {
+  position: absolute;
+  opacity: 0.2;
+  mix-blend-mode: luminosity;
+  top: 0;
+  right: 0;
+  width: 48px;
+  height: 70px;
+}

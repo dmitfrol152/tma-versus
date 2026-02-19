@@ -1,0 +1,1 @@
+export { NewOfficeLayout } from "./NewOfficeLayout";

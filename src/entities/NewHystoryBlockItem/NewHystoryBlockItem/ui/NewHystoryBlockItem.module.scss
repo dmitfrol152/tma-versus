@@ -1,0 +1,32 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.hystoryBlockItem {
+  padding: 16px;
+
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+
+  background-color: variables.$color-gray-dark2;
+
+  &__Inner {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__InnerText {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: variables.$color-white;
+  }
+
+  &__InnerDate {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: variables.$color-gray;
+  }
+}

@@ -1,0 +1,117 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.season {
+  position: relative;
+  margin: 0 0 38px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  z-index: 1;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    // gap: 8px;
+  }
+
+  &__infoSeason {
+    margin-bottom: 18px;
+
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: -0.99px;
+    text-align: center;
+    color: variables.$color-white-45;
+  }
+
+  &__infoPrize {
+    margin: 0 0 14px;
+    padding: 0;
+
+    font-family: variables.$ff-secondary;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 100%;
+    color: variables.$color-white;
+
+    text-shadow: 0 0 35px variables.$color-white;
+  }
+
+  &__infoTimer {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: -0.99px;
+    text-align: center;
+    color: variables.$color-yellow2;
+  }
+
+  &__description {
+    margin: 0;
+    padding: 0;
+
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.99px;
+    text-align: center;
+    color: variables.$color-gray-middle2;
+    text-align: center;
+  }
+
+  &__tour {
+    position: absolute;
+    left: 50%;
+    top: var(--app-padding-top);
+    transform: translateX(-50%);
+    width: 272px;
+    height: 144px;
+    border-radius: unset;
+    z-index: 110;
+  }
+
+  // &__overlayTop,
+  // &__overlayBottom,
+  // &__overlayLeft,
+  // &__overlayRight {
+  //   position: fixed;
+  //   background: rgba(0, 0, 0, 0.7);
+  //   backdrop-filter: blur(2px);
+  //   z-index: 100;
+  //   pointer-events: auto;
+  // }
+
+  // &__overlayTop {
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   height: calc(var(--app-padding-top) + 10px);
+  // }
+
+  // &__overlayBottom {
+  //   bottom: 0;
+  //   left: 0;
+  //   right: 0;
+  //   height: calc(100vh - (var(--app-padding-top) + 174px));
+  // }
+
+  // &__overlayLeft {
+  //   top: calc(var(--app-padding-top) + 10px);
+  //   bottom: calc(100vh - (var(--app-padding-top) + 174px));
+  //   left: 0;
+  //   right: calc(50% + 136px);
+  // }
+
+  // &__overlayRight {
+  //   top: calc(var(--app-padding-top) + 10px);
+  //   bottom: calc(100vh - (var(--app-padding-top) + 174px));
+  //   left: calc(50% + 136px);
+  //   right: 0;
+  // }
+}

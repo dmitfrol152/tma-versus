@@ -1,0 +1,1 @@
+export { NewMarqueeText } from "./NewMarqueeText";

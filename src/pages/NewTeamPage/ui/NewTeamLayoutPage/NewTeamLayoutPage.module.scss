@@ -1,0 +1,61 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.teamLayoutPage {
+  padding: 32px 0 96px;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  &__title {
+    margin-bottom: 24px;
+
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  &__titleText {
+    margin: 0;
+    padding: 0;
+
+    font-family: variables.$ff-main;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -1px;
+    color: variables.$color-white;
+  }
+
+  &__titleIcon {
+    width: 24px;
+    height: 24px;
+
+    &--default {
+      color: variables.$color-blue;
+    }
+
+    &--1 {
+      color: variables.$color-green;
+    }
+
+    &--2 {
+      color: variables.$color-pink;
+    }
+  }
+
+  &__tourOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+    z-index: 50;
+  }
+
+  &__tourOnboarding {
+    position: relative;
+    z-index: 100;
+  }
+}

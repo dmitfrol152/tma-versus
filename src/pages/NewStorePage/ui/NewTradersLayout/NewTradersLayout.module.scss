@@ -1,0 +1,31 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.tradersLayout {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 12px;
+  column-gap: 16px;
+
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__emptyText {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: variables.$color-milk;
+  }
+}
+
+.isTradersStep {
+  z-index: 100;
+}

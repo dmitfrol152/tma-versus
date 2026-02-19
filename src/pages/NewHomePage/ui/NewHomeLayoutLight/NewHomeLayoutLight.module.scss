@@ -1,0 +1,25 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.homeLayoutLight {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  height: 61px;
+
+  border-radius: 50%;
+  filter: blur(80px);
+
+  &--default {
+    background-color: variables.$color-blue;
+  }
+
+  &--1 {
+    background-color: variables.$color-green;
+  }
+
+  &--2 {
+    background-color: variables.$color-pink;
+  }
+}

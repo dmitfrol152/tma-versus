@@ -1,0 +1,1 @@
+export { NewButtonsChoiceCommunity } from "./NewButtonsChoiceCommunity";

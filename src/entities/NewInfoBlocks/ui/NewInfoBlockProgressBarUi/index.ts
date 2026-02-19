@@ -1,0 +1,1 @@
+export { NewInfoBlockProgressBarUi } from "./NewInfoBlockProgressBarUi";

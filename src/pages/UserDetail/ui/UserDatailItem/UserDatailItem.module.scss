@@ -1,0 +1,72 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.userDatailItem {
+  margin-bottom: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  &__title {
+    margin: 0;
+    padding: 0 0 0 12px;
+
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: variables.$color-gray;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    padding: 16px;
+
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: variables.$color-gray-dark2;
+
+    &:not(:last-child),
+    &:not(:first-child) {
+      border: 1px solid variables.$color-gray-middle3;
+    }
+  }
+
+  &__itemTitle {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: variables.$color-gray;
+  }
+
+  &__itemText {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    color: variables.$color-white;
+  }
+
+  &__itemLeft {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__itemIcon {
+    width: 18px;
+    height: 18px;
+  }
+}

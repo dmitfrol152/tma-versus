@@ -1,0 +1,1 @@
+export { NewStatisticsTeam } from "./NewStatisticsTeam";

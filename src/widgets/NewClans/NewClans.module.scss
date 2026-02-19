@@ -1,0 +1,21 @@
+.clans {
+  margin: 0 0 45px;
+
+  display: flex;
+  flex-direction: column;
+
+  // Исправляем blending для clansLight и clansBackground во время онбординга
+  &__onboarding {
+    // Убираем mix-blend-mode у clansBackground во время онбординга
+    :global(.clansBackground__green),
+    :global(.clansBackground__pink) {
+      mix-blend-mode: normal !important;
+      opacity: 0.15 !important;
+    }
+
+    // Корректируем clansLight - уменьшаем интенсивность
+    :global(.clansLight) {
+      opacity: 0.7 !important;
+    }
+  }
+}

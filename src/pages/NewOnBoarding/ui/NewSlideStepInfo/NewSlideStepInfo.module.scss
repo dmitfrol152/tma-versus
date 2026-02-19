@@ -1,0 +1,20 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.slideStepInfo {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+
+  &__icon {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.blue {
+  color: variables.$color-blue;
+}
+
+.gray {
+  color: variables.$color-gray;
+}

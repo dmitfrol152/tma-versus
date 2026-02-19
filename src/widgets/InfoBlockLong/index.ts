@@ -1,0 +1,1 @@
+export { InfoBlockLong } from "./InfoBlockLong";

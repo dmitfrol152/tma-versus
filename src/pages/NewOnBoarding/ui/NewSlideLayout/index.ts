@@ -1,0 +1,1 @@
+export { NewSlideLayout } from "./NewSlideLayout";

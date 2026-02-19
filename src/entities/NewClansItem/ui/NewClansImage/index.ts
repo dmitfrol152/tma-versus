@@ -1,0 +1,1 @@
+export { NewClansImage } from "./NewClansImage";

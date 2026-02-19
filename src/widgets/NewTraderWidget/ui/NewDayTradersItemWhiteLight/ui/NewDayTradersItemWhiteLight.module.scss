@@ -1,0 +1,12 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.dayTradersItemWhiteLight {
+  position: absolute;
+  top: -195px;
+  left: -10px;
+  transform: rotate(-4deg);
+  width: 272px;
+  height: 192px;
+  filter: blur(45px);
+  background-color: variables.$color-white-25;
+}

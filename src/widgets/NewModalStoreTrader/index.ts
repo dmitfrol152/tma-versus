@@ -1,0 +1,1 @@
+export { NewModalStoreTrader } from "./NewModalStoreTrader";

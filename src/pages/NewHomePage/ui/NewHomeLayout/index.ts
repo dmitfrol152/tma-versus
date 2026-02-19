@@ -1,0 +1,1 @@
+export { NewHomeLayout } from "./NewHomeLayout";

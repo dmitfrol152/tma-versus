@@ -1,0 +1,70 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.inputUi {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  &--before {
+    &::before {
+      content: "@";
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      transform: translateY(-50%);
+
+      font-family: variables.$ff-main;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 18px;
+      letter-spacing: -1px;
+      color: variables.$color-gray;
+    }
+
+    .inputUi__field {
+      padding: 19px 104px 19px 26px;
+    }
+  }
+
+  &__label {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 14x;
+    line-height: 16px;
+    color: variables.$color-white;
+  }
+
+  &__field {
+    padding: 19px 104px 19px 16px;
+
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: -1px;
+    color: variables.$color-gray;
+
+    background-color: variables.$color-gray-dark2;
+    border: none;
+
+    &:focus-visible {
+      font-family: variables.$ff-main;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 18px;
+      letter-spacing: -1px;
+      color: variables.$color-white;
+
+      outline: none;
+    }
+
+    &::placeholder {
+      font-family: variables.$ff-main;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 18px;
+      letter-spacing: -1px;
+      color: variables.$color-gray;
+    }
+  }
+}

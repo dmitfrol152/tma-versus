@@ -1,0 +1,46 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.topLeaderboard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  &__title {
+    margin: 0;
+    padding: 0 0 0 18px;
+
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: variables.$color-gray;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    border-bottom: 1px solid variables.$color-gray-middle;
+  }
+
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__emptyText {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: variables.$color-milk;
+  }
+}

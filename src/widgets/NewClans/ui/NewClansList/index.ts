@@ -1,0 +1,1 @@
+export { NewClansList } from "./NewClansList";

@@ -1,0 +1,1 @@
+export { NewInfoBlockTitleUi } from "./NewInfoBlockTitleUi";

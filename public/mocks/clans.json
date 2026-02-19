@@ -1,0 +1,70 @@
+{
+  "bulls": {
+    "name": "Bulls",
+    "percent": 52,
+    "coins": 45359,
+    "perMinute": 1236,
+    "boost": {
+      "value": null,
+      "timer": null
+    },
+    "safe": {
+      "value": 1800
+    },
+    "stats": {
+      "productivityPerDay": 4200,
+      "totalFarmed": 178500,
+      "shareInTeam": "14,5%"
+    },
+    "hystory": [
+      {
+        "operation": "Claim",
+        "trader": null,
+        "number": 2350,
+        "date": "1 Sep, 12:30"
+      },
+      {
+        "operation": "Trader",
+        "trader": "installed",
+        "number": null,
+        "date": "1 Sep, 12:30"
+      }
+    ],
+    "tariff": "basic",
+    "productivityPerDay": "+1,236"
+  },
+  "bears": {
+    "name": "Bears",
+    "percent": 48,
+    "coins": 42798,
+    "perMinute": 1048,
+    "boost": {
+      "value": 15,
+      "timer": "08:13"
+    },
+    "safe": {
+      "value": 1800
+    },
+    "stats": {
+      "productivityPerDay": 4200,
+      "totalFarmed": 178500,
+      "shareInTeam": "14,5%"
+    },
+    "hystory": [
+      {
+        "operation": "Claim",
+        "trader": null,
+        "number": 2350,
+        "date": "1 Sep, 12:30"
+      },
+      {
+        "operation": "Trader",
+        "trader": "installed",
+        "number": null,
+        "date": "1 Sep, 12:30"
+      }
+    ],
+    "tariff": "basic",
+    "productivityPerDay": "+1,048"
+  }
+}

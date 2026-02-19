@@ -1,0 +1,1 @@
+export { NewProfileLayout } from "./NewProfileLayout";

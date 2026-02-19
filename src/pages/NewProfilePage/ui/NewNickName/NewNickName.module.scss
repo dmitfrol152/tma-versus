@@ -1,0 +1,65 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.nickName {
+  margin-bottom: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__titleTranslator {
+    width: 6px;
+    height: 6px;
+  }
+
+  &--default {
+    .nickName__titleTranslator {
+      background-color: variables.$color-blue;
+    }
+  }
+
+  &--1 {
+    .nickName__titleTranslator {
+      background-color: variables.$color-green;
+    }
+  }
+
+  &--2 {
+    .nickName__titleTranslator {
+      background-color: variables.$color-pink;
+    }
+  }
+
+  &__titleText {
+    margin: 0;
+    padding: 0;
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0px;
+    color: variables.$color-white;
+  }
+
+  &__field {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__fieldButton {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+
+    min-width: 80px;
+  }
+}

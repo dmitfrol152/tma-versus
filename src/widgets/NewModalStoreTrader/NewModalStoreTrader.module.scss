@@ -1,0 +1,24 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.modalStoreTrader {
+  &__imageIcon {
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 287px;
+    height: 285px;
+    color: variables.$color-white-12;
+  }
+
+  &__infoCoinIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  &__closeIcon {
+    width: 24px;
+    height: 24px;
+    color: variables.$color-blue;
+  }
+}

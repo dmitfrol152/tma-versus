@@ -1,0 +1,82 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.usersRatingCardUi {
+  padding: 15px 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  background-color: variables.$color-gray-dark2;
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__leftNickname {
+    font-family: variables.$ff-main;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.99px;
+    color: variables.$color-white;
+  }
+
+  &__leftInfo {
+    display: flex;
+    gap: 17px;
+  }
+
+  &__leftInfoInner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__leftInfoInnerText {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: -0.99px;
+    color: variables.$color-white;
+  }
+
+  &__leftInfoInnerIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  &__leftInfoText {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: -0.99px;
+    color: variables.$color-gray;
+  }
+
+  &__right {
+    font-family: variables.$ff-main;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.99px;
+    color: variables.$color-white;
+
+    &--gold {
+      color: variables.$color-gold2;
+    }
+
+    &--silver {
+      color: variables.$color-silver;
+    }
+
+    &--bronze {
+      color: variables.$color-bronze;
+    }
+  }
+}

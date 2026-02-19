@@ -1,0 +1,1 @@
+export { NewTopLeaderboard } from "./NewTopLeaderboard";

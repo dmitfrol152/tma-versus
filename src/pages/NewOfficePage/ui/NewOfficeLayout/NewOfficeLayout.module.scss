@@ -1,0 +1,12 @@
+.officeLayout {
+  margin-bottom: 23px;
+
+  &__basic {
+    margin-bottom: 16px;
+  }
+
+  &__tourOnboarding {
+    position: relative;
+    z-index: 100;
+  }
+}

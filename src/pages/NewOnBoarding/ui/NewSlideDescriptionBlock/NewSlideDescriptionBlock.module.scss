@@ -1,0 +1,20 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.slideDescription {
+  margin: 0 auto;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  max-width: 288px;
+
+  font-family: variables.$ff-main;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 126%;
+  text-transform: uppercase;
+  color: variables.$color-milk;
+
+  z-index: 1;
+}

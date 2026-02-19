@@ -1,0 +1,1 @@
+export { NewLeaderboardTeam } from "./NewLeaderboardTeam";

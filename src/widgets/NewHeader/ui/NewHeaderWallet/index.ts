@@ -1,0 +1,1 @@
+export { NewHeaderWallet } from "./NewHeaderWallet";

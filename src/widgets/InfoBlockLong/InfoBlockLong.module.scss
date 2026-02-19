@@ -1,0 +1,86 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.infoBlockLong {
+  padding: 16px;
+
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: variables.$color-gray-dark2;
+  border: 1px solid variables.$color-gray-middle;
+
+  &__btns {
+    min-width: 80px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__long {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__longInfo {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  &__longInfoTitle {
+    margin: 0;
+    padding: 0;
+
+    font-family: variables.$ff-main;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -1px;
+    color: variables.$color-white;
+  }
+
+  &__longInfoTop {
+    margin-top: 8px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffd66b;
+    font-weight: 600;
+  }
+
+  &__longInfoTopIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  &__longInfoTopText {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: -1px;
+  }
+
+  &__longInfoBtn {
+    min-width: 80px;
+    width: unset;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__longInfoBlock {
+    display: flex;
+    margin-top: 5px;
+    flex-direction: column;
+  }
+}

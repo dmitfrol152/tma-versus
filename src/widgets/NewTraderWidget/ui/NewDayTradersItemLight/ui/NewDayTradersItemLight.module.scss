@@ -1,0 +1,17 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.dayTradersItemLight {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 61px;
+  height: 61px;
+  filter: blur(75px);
+
+  &__green {
+    background-color: variables.$color-green;
+  }
+  &__pink {
+    background-color: variables.$color-pink;
+  }
+}

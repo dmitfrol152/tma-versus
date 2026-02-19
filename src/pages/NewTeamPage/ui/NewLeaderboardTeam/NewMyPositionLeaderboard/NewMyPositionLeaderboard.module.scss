@@ -1,0 +1,20 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.myPositionLeaderboard {
+  margin-bottom: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  &__title {
+    margin: 0;
+    padding: 0 0 0 18px;
+
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: variables.$color-gray;
+  }
+}

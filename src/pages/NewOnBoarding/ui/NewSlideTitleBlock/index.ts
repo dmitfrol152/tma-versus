@@ -1,0 +1,1 @@
+export { NewSlideTitleBlock } from "./NewSlideTitleBlock";

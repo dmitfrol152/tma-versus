@@ -1,0 +1,1 @@
+export { NewSlideStepInfo } from "./NewSlideStepInfo";

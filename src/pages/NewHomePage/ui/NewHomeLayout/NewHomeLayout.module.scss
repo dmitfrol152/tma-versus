@@ -1,0 +1,32 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.homeLayout {
+  padding: 27px 0 64px;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  &__text {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: variables.$color-milk;
+  }
+
+  &__tourOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+    z-index: 50;
+  }
+
+  &__tourOnboarding {
+    position: relative;
+    z-index: 100;
+  }
+}

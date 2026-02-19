@@ -1,0 +1,28 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.buttonBack {
+  &__button {
+    margin-bottom: 24px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__buttonIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  &__buttonTitle {
+    margin: 0;
+    padding: 0;
+
+    font-family: variables.$ff-main;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -1px;
+    color: variables.$color-white;
+  }
+}

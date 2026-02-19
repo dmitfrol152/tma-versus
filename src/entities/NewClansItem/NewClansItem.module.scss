@@ -1,0 +1,177 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.clansItem {
+  position: relative;
+  overflow: hidden;
+
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  font-family: variables.$ff-main;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  width: 100%;
+  height: 100%;
+
+  &__wrapper {
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+
+    &--1 {
+      min-height: 100%;
+    }
+
+    &--2 {
+      min-height: 100%;
+    }
+  }
+
+  &__inner {
+    margin: 0 0 66px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__down {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__team {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__teamTitle {
+    margin: 0;
+    padding: 0;
+
+    font-family: variables.$ff-main;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--clan-accent-color);
+  }
+
+  &__teamText {
+    font-family: variables.$ff-main;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: variables.$color-gray;
+  }
+
+  &__coin {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__coinIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  &__coinText {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: variables.$color-white;
+  }
+
+  &__perMinute {
+    margin: 0 0 8px;
+
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: variables.$color-white;
+
+    letter-spacing: -0.99px;
+    text-align: left;
+  }
+
+  &__boost {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+
+    letter-spacing: -0.99px;
+  }
+
+  &__boostTitle {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: variables.$color-white;
+
+    letter-spacing: -0.99px;
+  }
+
+  &__boostPercent {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: variables.$color-yellow;
+  }
+
+  &__boostTime {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: variables.$color-gray;
+  }
+
+  &__boostNo {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: variables.$color-gray;
+  }
+}
+
+.clansItem__wrapper--1 {
+  border-color: variables.$color-green;
+  border-style: solid;
+  border-width: 1px;
+
+  .clansItem__teamTitle {
+    color: variables.$color-green;
+  }
+}
+
+.clansItem__wrapper--2 {
+  border-color: variables.$color-pink;
+  border-style: solid;
+  border-width: 1px;
+
+  .clansItem__teamTitle {
+    color: variables.$color-pink;
+  }
+}
+
+.clansItem__wrapper--active {
+  border-width: 2px;
+}
+
+.clansItem__wrapper--inactive {
+  border-color: variables.$color-gray-middle4;
+}

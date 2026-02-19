@@ -1,0 +1,27 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  min-height: 64px;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: variables.$color-black;
+  padding-bottom: var(--app-padding-bottom);
+
+  &__wrapper {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 402px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-grow: 1;
+  }
+}

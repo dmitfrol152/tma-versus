@@ -1,0 +1,1 @@
+export { NewStatisticsWidget } from "./NewStatisticsWidget";

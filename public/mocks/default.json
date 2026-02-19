@@ -1,0 +1,17 @@
+{
+  "safe": {
+    "value": 0,
+    "max": 10000
+  },
+  "stats": {
+    "productivityPerDay": 0,
+    "totalFarmed": 0,
+    "shareInTeam": 0
+  },
+  "treader": {
+    "title": "Basic",
+    "coins": 3000,
+    "seats": 50,
+    "boost": 1.5
+  }
+}

@@ -1,0 +1,54 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.blockInfoUi {
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  width: 100%;
+  height: 100%;
+  border: 1px solid variables.$color-gray-middle;
+  background-color: inherit;
+
+  &--active {
+    background-color: variables.$coloe-gray-middle;
+    border: 1px solid variables.$color-white-16;
+
+    .blockInfoUi__text {
+      color: variables.$color-white;
+    }
+  }
+
+  &__data {
+    font-family: variables.$ff-main;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.99px;
+    color: variables.$color-white;
+  }
+
+  &__text {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.99px;
+    color: variables.$color-gray;
+    text-align: left;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+  }
+}

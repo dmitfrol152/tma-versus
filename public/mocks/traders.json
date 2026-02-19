@@ -1,0 +1,9 @@
+{
+  "traders": [
+    { "name": "Trader", "number": 1, "coints": 800, "totalConts": 10700 },
+    { "name": "Trader", "number": 2, "coints": 1000, "totalConts": 35100 },
+    { "name": "Trader", "number": 3, "coints": 1000, "totalConts": 35100 },
+    { "name": "Trader", "number": 4, "coints": 1000, "totalConts": 35100 },
+    { "name": "Trader", "number": 5, "coints": 1000, "totalConts": 35100 }
+  ]
+}

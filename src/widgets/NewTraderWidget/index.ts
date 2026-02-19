@@ -1,0 +1,1 @@
+export { NewTraderWidget } from "./NewTraderWidget";

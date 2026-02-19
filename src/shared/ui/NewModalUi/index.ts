@@ -1,0 +1,1 @@
+export { NewModalUi } from "./NewModalUi";

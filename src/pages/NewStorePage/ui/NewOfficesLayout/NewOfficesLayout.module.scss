@@ -1,0 +1,30 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.officesLayout {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__emptyText {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: variables.$color-milk;
+  }
+}
+
+.isOfficesStep {
+  z-index: 100;
+}

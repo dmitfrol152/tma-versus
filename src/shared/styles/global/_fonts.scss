@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "OffBit";
+  src: url("@shared/assets/fonts/OffBit-Bold.woff2") format("woff2"),
+    url("@shared/assets/fonts/OffBit-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RobotoMono";
+  src: url("@shared/assets/fonts/RobotoMono-Medium.woff2") format("woff2"),
+    url("@shared/assets/fonts/RobotoMono-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RobotoMono";
+  src: url("@shared/assets/fonts/RobotoMono-Regular.woff2") format("woff2"),
+    url("@shared/assets/fonts/RobotoMono-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SuisseIntl";
+  src: url("@shared/assets/fonts/suisse-intl-regular.woff2") format("woff2"),
+    url("@shared/assets/fonts/suisse-intl-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,103 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.newModalConfirmPay {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  &__wrapper {
+    padding: 72px 8px 16px;
+    margin: auto 0;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    min-height: 248px;
+    background-color: variables.$color-black;
+  }
+
+  &__light {
+    position: absolute;
+    top: -305px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 330px;
+    height: 330px;
+    filter: blur(200px);
+    background-color: variables.$color-blue;
+  }
+
+  &__close {
+    padding: 10px;
+
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+
+  &__closeIcon {
+    width: 24px;
+    height: 24px;
+    color: variables.$color-blue;
+  }
+
+  &__btn {
+    padding: 16px;
+    width: 100%;
+
+    font-family: variables.$ff-main;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: variables.$color-white;
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    padding: 0;
+    font-family: variables.$ff-main;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -1px;
+    color: variables.$color-white;
+  }
+
+  &__block {
+    z-index: 1;
+  }
+
+  &__description {
+    margin: 0 0 24px;
+    padding: 0;
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -1px;
+    color: variables.$color-gray-middle5;
+  }
+
+  &__descriptionBold {
+    font-family: variables.$ff-main;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -1px;
+    color: variables.$color-white;
+  }
+
+  &__descriptionIcon {
+    width: 18px;
+    height: 18px;
+  }
+}

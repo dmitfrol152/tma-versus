@@ -1,0 +1,47 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.statisticsCardUi {
+  &__Inner {
+    padding: 16px;
+
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #101010;
+    border-bottom: 1px solid variables.$color-gray-middle3;
+  }
+
+  &__InnerLast {
+    border-bottom: none;
+  }
+
+  &__InnerText {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: variables.$color-gray;
+    letter-spacing: -1px;
+  }
+
+  &__InnerAmount {
+    font-family: variables.$ff-main;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: variables.$color-white;
+    letter-spacing: -1px;
+  }
+
+  &__InnerBlock {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__InnerIcon {
+    width: 18px;
+    height: 18px;
+  }
+}

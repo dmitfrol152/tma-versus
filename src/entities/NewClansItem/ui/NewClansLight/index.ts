@@ -1,0 +1,1 @@
+export { NewClansLight } from "./NewClansLight";

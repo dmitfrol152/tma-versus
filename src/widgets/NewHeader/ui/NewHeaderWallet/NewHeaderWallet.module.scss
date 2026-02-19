@@ -1,0 +1,65 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.headerWallet {
+  display: flex;
+  align-items: center;
+
+  &__inner {
+    padding: 11px 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    background-color: variables.$color-white-12;
+  }
+
+  &__coin {
+    width: 18px;
+    height: 18px;
+  }
+
+  &__info {
+    font-family: variables.$ff-main;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: variables.$color-white;
+  }
+
+  &__wallet {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__btn {
+    background-color: variables.$color-gray-dark3;
+  }
+}
+
+.clansActive--default {
+  color: variables.$color-blue;
+
+  .headerWallet__btn {
+    color: variables.$color-blue;
+    border: 2px solid variables.$color-blue;
+  }
+}
+
+.clansActive--1 {
+  color: variables.$color-green;
+
+  .headerWallet__btn {
+    color: variables.$color-green;
+    border: 2px solid variables.$color-green;
+  }
+}
+
+.clansActive--2 {
+  color: variables.$color-pink;
+
+  .headerWallet__btn {
+    color: variables.$color-pink;
+    border: 2px solid variables.$color-pink;
+  }
+}

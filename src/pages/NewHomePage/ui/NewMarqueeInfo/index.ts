@@ -1,0 +1,1 @@
+export { NewMarqueeInfo } from "./NewMarqueeInfo";

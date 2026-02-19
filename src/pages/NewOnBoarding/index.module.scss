@@ -1,0 +1,8 @@
+.onboarding {
+  padding-top: var(--app-padding-top);
+  padding-bottom: calc(27px + var(--app-padding-bottom));
+
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}

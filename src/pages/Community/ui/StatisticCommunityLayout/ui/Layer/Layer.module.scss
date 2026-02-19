@@ -1,0 +1,65 @@
+@use "/src/shared/styles/global/variables" as variables;
+
+.layer {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__itemTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 18px;
+  }
+
+  &__itemTopLayer {
+    padding-left: 18px;
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: variables.$color-gray;
+  }
+
+  &__itemTopPercent {
+    padding: 1px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-family: variables.$ff-main;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: variables.$color-white;
+    background-color: variables.$color-white-12;
+  }
+
+  &__itemList {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    background-color: variables.$color-gray-dark2;
+  }
+
+  &__tourOnboarding {
+    position: relative;
+    z-index: 100;
+  }
+}

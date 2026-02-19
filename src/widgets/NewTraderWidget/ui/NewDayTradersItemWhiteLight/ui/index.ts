@@ -1,0 +1,1 @@
+export { NewDayTradersItemWhiteLight } from "./NewDayTradersItemWhiteLight";

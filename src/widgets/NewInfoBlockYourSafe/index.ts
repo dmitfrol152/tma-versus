@@ -1,0 +1,1 @@
+export { NewInfoBlockYourSafe } from "./NewInfoBlockYourSafe";

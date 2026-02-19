@@ -1,0 +1,1 @@
+export { NewSlideVictory } from "./NewSlideVictory";
