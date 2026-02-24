@@ -9,18 +9,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps: 
+    steps:
       - name: checkout
-        uses: actions/checkout@3
+        uses: actions/checkout@4
 
       - name: install node
-        uses: actions/setup-node@3
+        uses: actions/setup-node@4
         with:
-          node-version: 18
+          node-version-file: "./nvmrc"
+          cache: npm
+          cache-dependency-path: "./package-lock.json"
 
       - name: npm i
-        run: npm install
+        run: npm ci
 
       - name: build
-        run: npm run buildy
-
+        run: npm run build
