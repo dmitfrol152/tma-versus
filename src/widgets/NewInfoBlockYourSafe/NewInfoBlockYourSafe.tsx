@@ -7,21 +7,32 @@ import { NewInfoBlockProgressBarUi } from "@/entities/NewInfoBlocks/ui/NewInfoBl
 export function NewInfoBlockYourSafe({
   buttonName,
   activeTeam,
-  prize,
+  // prize,
+  // user,
   userBalanse,
   handleClaimBank,
 }: NewInfoBlockYourSafeProps) {
+  // let startValue: number;
+  // let endValue: number;
+
+  // if ((activeTeam === null && !userBalanse) || !userBalanse?.my_ofice.ofice) {
+  //   startValue = 0;
+  //   endValue = prize;
+  // } else {
+  //   const office = userBalanse.my_ofice.ofice;
+
+  //   startValue = office.safe_capacity;
+  //   endValue = office.lvl === 2 ? 10000 : office.lvl === 3 ? 100000 : 3000;
+  // }
   let startValue: number;
   let endValue: number;
 
-  if ((activeTeam === null && !userBalanse) || !userBalanse?.my_ofice.ofice) {
+  if (!userBalanse) {
     startValue = 0;
-    endValue = prize;
+    endValue = 0;
   } else {
-    const office = userBalanse.my_ofice.ofice;
-
-    startValue = office.safe_capacity;
-    endValue = office.lvl === 2 ? 10000 : office.lvl === 3 ? 100000 : 3000;
+    startValue = userBalanse.my_bank;
+    endValue = userBalanse.my_ofice.ofice.safe_capacity;
   }
 
   return (

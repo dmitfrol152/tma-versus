@@ -11,7 +11,7 @@ export function newPostAddOrChangeTrader({
     first_user_id_trader: currentId,
     ...(targetId && { second_user_id_trader: targetId }),
   };
-  
+
   return fetch(`${BASE_URL}/apply_traders_in_ofice/`, {
     method: "POST",
     headers: {

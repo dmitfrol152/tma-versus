@@ -26,6 +26,8 @@ export default function NewProfilePage() {
     alert("click withdrawal");
   };
 
+  console.log(user);
+
   const handleShareButton = (url: string) => {
     const tg = window.Telegram?.WebApp;
     if (!tg) return;

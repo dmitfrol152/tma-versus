@@ -13,6 +13,7 @@ export const NewModalConfirmPaySchema = z.object({
     input: [],
     output: z.void(),
   }),
+  countForChangeTeam: z.number(),
 });
 
 export type NewModalConfirmPayProps = z.infer<typeof NewModalConfirmPaySchema>;

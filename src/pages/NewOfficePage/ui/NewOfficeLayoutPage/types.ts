@@ -22,7 +22,7 @@ export const NewOfficeLayoutPageSchema = z.object({
   userBalanse: NewUserBalanceSchema,
   officeQuery: newFetchOfficeSchema,
   user: NewInfoPersonSchema,
-  prize: z.number(),
+  // prize: z.number(),
   handleClaimBank: z.function({
     input: [],
     output: z.void(),
@@ -39,6 +39,7 @@ export const NewOfficeLayoutPageSchema = z.object({
   }),
   isStartTour: z.boolean(),
   stepIndex: z.number(),
+  errors: z.string(),
 });
 
 export type NewOfficeLayoutPageProps = z.infer<

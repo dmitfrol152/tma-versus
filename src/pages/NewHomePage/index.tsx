@@ -63,6 +63,9 @@ export default function NewHomePage() {
   const mutationOnboardingApplyTeam = usePostOnboardingApplyTeam();
   const mutationPostChangeTeam = usePostChangeTeam();
 
+  const countForChangeTeam =
+    dataHomePage?.user_balance.price_per_change_team || 0;
+
   const steps = useMemo(() => {
     return HOME_TOUR_STEPS.map((item) => ({
       ...item,
@@ -288,6 +291,7 @@ export default function NewHomePage() {
           isStartTour={isStartTour}
           stepIndex={stepIndex}
           setIsStartTour={setIsStartTour}
+          countForChangeTeam={countForChangeTeam}
         />
       </>
     );

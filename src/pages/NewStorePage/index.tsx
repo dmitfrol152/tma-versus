@@ -11,6 +11,7 @@ import { useCallback, useMemo, useState } from "react";
 import type { NewUserTradersProps } from "@/shared/lib/types/NewUserTraders/model/types";
 import type { NewOfficeProps } from "@/shared/lib/types/NewOffice/model/types";
 import { useNewPostBuySomething } from "@/shared/api/newPostBuySomething/model/hooks/useNewPostBuySomething";
+import { queryClient } from "@/shared/lib/store/queryClient";
 import styles from "./index.module.scss";
 import { NewButtonUi } from "@/shared/ui/NewButtonUi";
 import { useLocation, useNavigate } from "react-router";
@@ -130,6 +131,7 @@ export default function NewStorePage() {
       {
         onSuccess: (data) => {
           console.log("Success:", data);
+          queryClient.invalidateQueries({ queryKey: ["homePage"] });
         },
         onError: (error) => {
           console.error(error);

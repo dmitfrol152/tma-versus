@@ -27,6 +27,7 @@ export function NewHomeLayout({
   isStartTour,
   stepIndex,
   setIsStartTour,
+  countForChangeTeam,
 }: NewHomeLayoutDataProps) {
   const isSeasonStep = isStartTour && stepIndex === 0;
   const isClansStep = isStartTour && stepIndex === 1;
@@ -69,6 +70,7 @@ export function NewHomeLayout({
           orderedClans={orderedClans}
           activeTeam={activeTeam}
           handleClickChangeTeam={handleClickChangeTeam}
+          countForChangeTeam={countForChangeTeam}
         />
       </NewModalUi>
       {isOpenModalStatus && (

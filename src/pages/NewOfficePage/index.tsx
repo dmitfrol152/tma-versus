@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import type {
   NewInfoPersonNameProps,
-  NewSelectorPrizeProps,
+  // NewSelectorPrizeProps,
   NewSelectorProps,
   NewuserBalanseStoreNameProps,
 } from "@/shared/lib/store/types";
@@ -17,7 +17,7 @@ import type { NewUserTradersProps } from "@/shared/lib/types/NewUserTraders/mode
 import { NewButtonUi } from "@/shared/ui/NewButtonUi";
 import styles from "./index.module.scss";
 import { useLocation, useNavigate } from "react-router";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Joyride, type CallBackProps } from "react-joyride";
 import { NewTooltipOnboardingUi } from "@/shared/ui/NewTooltipOnboardingUi";
 import { OFFICE_TOUR_STEPS } from "./lib/constants/OFFICE_TOUR_STEPS";
@@ -35,6 +35,9 @@ export default function NewOfficePage() {
     }
     return 20;
   });
+
+  // TODO: delete logos errors
+  const [errors, setError] = useState("");
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -80,9 +83,9 @@ export default function NewOfficePage() {
     (state: NewInfoPersonNameProps) => state.infoPersonName.infoPerson,
   );
 
-  const prize = useSelector(
-    (state: NewSelectorPrizeProps) => state.prizeName.prizeValue,
-  );
+  // const prize = useSelector(
+  //   (state: NewSelectorPrizeProps) => state.prizeName.prizeValue,
+  // );
 
   const nextTourType = location.state?.startOfficeTour
     ? "office"
@@ -158,6 +161,7 @@ export default function NewOfficePage() {
       onSuccess: (data) => {
         console.log("Success:", data);
         queryClient.invalidateQueries({ queryKey: ["user"] });
+        queryClient.invalidateQueries({ queryKey: ["homePage"] });
       },
       onError: (error) => {
         console.error(error.message);
@@ -177,13 +181,30 @@ export default function NewOfficePage() {
       {
         onSuccess: (data) => {
           console.log("Success:", data);
+          queryClient.invalidateQueries({ queryKey: ["homePage"] });
+          // TODO: delete down
+          setError("");
         },
         onError: (error) => {
           console.error(error.message);
+          // TODO: delete down
+          setError(
+            "Не хватает места в данном офисе или этот трейдер уже используется у вас в офисе",
+          );
+          setIsOpenModal(false);
         },
       },
     );
   };
+
+  // TODO: delete down
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setError("");
+    }, 3000);
+
+    return () => clearTimeout(timerId);
+  }, [errors]);
 
   if (officeQuery.isError) {
     return (
@@ -215,6 +236,8 @@ export default function NewOfficePage() {
   }
 
   if (officeQuery.data && officeQuery.isSuccess) {
+    console.log(officeQuery.data);
+
     return (
       <>
         <Joyride
@@ -254,7 +277,7 @@ export default function NewOfficePage() {
           userBalanse={userBalanse}
           officeQuery={officeQuery.data}
           user={user}
-          prize={prize}
+          // prize={prize}
           handleClaimBank={handleClaimBank}
           handleOpenModalInventar={handleOpenModalInventar}
           isOpenModal={isOpenModal}
@@ -262,6 +285,8 @@ export default function NewOfficePage() {
           handleClickAddCoinTrader={handleClickAddCoinTrader}
           isStartTour={isStartTour}
           stepIndex={stepIndex}
+          // TODO: delete down
+          errors={errors}
         />
       </>
     );

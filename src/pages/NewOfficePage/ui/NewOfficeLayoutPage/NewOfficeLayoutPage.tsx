@@ -17,7 +17,7 @@ export function NewOfficeLayoutPage({
   userBalanse,
   officeQuery,
   user,
-  prize,
+  // prize,
   handleClaimBank,
   handleOpenModalInventar,
   isOpenModal,
@@ -25,6 +25,7 @@ export function NewOfficeLayoutPage({
   handleClickAddCoinTrader,
   isStartTour,
   stepIndex,
+  errors,
 }: NewOfficeLayoutPageProps) {
   const classNameIcon =
     activeTeam === "1"
@@ -36,7 +37,6 @@ export function NewOfficeLayoutPage({
   return (
     <div className={styles.officeLayoutPage}>
       {isStartTour && <div className={styles.officeLayoutPage__tourOverlay} />}
-
       {isButtonActiveOfficeTasks === "office" && (
         <div className={styles.officeLayoutPage__title}>
           <h2 className={styles.officeLayoutPage__titleText}>My office</h2>
@@ -58,7 +58,7 @@ export function NewOfficeLayoutPage({
           userBalanse={userBalanse}
           officeQuery={officeQuery}
           user={user}
-          prize={prize}
+          // prize={prize}
           handleClaimBank={handleClaimBank}
           handleOpenModalInventar={handleOpenModalInventar}
           isOpenModal={isOpenModal}
@@ -78,6 +78,8 @@ export function NewOfficeLayoutPage({
         />
       )}
       <div className={styles.officeLayoutPage__shadow}></div>
+      // TODO: delete down
+      {errors && <div className={styles.delete}>{errors}</div>}
     </div>
   );
 }

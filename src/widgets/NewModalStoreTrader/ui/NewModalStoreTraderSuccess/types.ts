@@ -13,6 +13,7 @@ export const NewModalStoreTraderSuccessSchema = z.object({
     output: z.void(),
   }),
   IconClose: z.custom<ReactNode>(),
+  earnDay: z.number(),
 });
 
 export type NewModalStoreTraderSuccessProps = z.infer<

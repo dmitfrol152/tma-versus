@@ -1,7 +1,9 @@
 import NewOnBoarding from "@/pages/NewOnBoarding";
-import { Route, Routes } from "react-router";
+import { Navigate, Route, Routes } from "react-router";
 import { lazy } from "react";
 import { MainLayout } from "@/app/router/MainLayout/MainLayout";
+import { useFetchHomePage } from "@/shared/api/newFetchHomePage/model/hooks/useFetchHomePage";
+import styles from "./AppRouter.module.scss";
 
 const NewHomePage = lazy(() => import("@/pages/NewHomePage"));
 const NewProfilePage = lazy(() => import("@/pages/NewProfilePage"));
@@ -12,9 +14,25 @@ const CommunityPage = lazy(() => import("@/pages/Community"));
 const UserDetailPage = lazy(() => import("@/pages/UserDetail"));
 
 export default function AppRouter() {
+  const { data: dataHomePage, isLoading: isLoadingHomePage } =
+    useFetchHomePage();
+
+  if (isLoadingHomePage) {
+    return (
+      <div className={styles.appRouter__loading}>
+        <span className={styles.appRouter__text}>Loading..</span>
+      </div>
+    );
+  }
+
+  const hasTeam = dataHomePage?.user_balance?.team;
+
   return (
     <Routes>
-      <Route path="/" element={<NewOnBoarding />} />
+      <Route
+        path="/"
+        element={hasTeam ? <Navigate to="/home" replace /> : <NewOnBoarding />}
+      />
       <Route element={<MainLayout />}>
         <Route path="/home" element={<NewHomePage />} />
         <Route path="/office" element={<NewOfficePage />} />

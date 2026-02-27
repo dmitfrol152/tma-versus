@@ -12,6 +12,7 @@ import { useCallback } from "react";
 import { NewModalStoreTraderError } from "./ui/NewModalStoreTraderError/NewModalStoreTraderError";
 import { useNavigate } from "react-router";
 import { useNewPostBuySomething } from "@/shared/api/newPostBuySomething/model/hooks/useNewPostBuySomething";
+import { queryClient } from "@/shared/lib/store/queryClient";
 
 export function NewModalStoreTrader({
   setIsOpenModal,
@@ -46,6 +47,7 @@ export function NewModalStoreTrader({
       {
         onSuccess: () => {
           setIsSuccess("success");
+          queryClient.invalidateQueries({ queryKey: ["homePage"] });
         },
         onError: (error) => {
           setIsSuccess("error");
@@ -76,6 +78,7 @@ export function NewModalStoreTrader({
         handleContinue={handleContinue}
         handleCloseModal={handleCloseModal}
         IconClose={<IconClose className={styles.modalStoreTrader__closeIcon} />}
+        earnDay={selectedTrader.trader.earn_for_day}
       />
     );
   }

@@ -10,6 +10,7 @@ export function NewModalConfirmPay({
   orderedClans,
   activeTeam,
   handleClickChangeTeam,
+  countForChangeTeam,
 }: NewModalConfirmPayProps) {
   const noTargetClan = getNewNoTargetClan(orderedClans, activeTeam);
 
@@ -39,7 +40,7 @@ export function NewModalConfirmPay({
                 />
               }{" "}
               <span className={styles.newModalConfirmPay__descriptionBold}>
-                500 stars
+                {countForChangeTeam} stars
               </span>{" "}
               and cannot be canceled. Do you want to continue?
             </p>

@@ -15,6 +15,7 @@ export const NewUserBalanceSchema = z.object({
   earn_in_team_per_weak: z.int(),
   list_of_my_traders: z.array(NewUserTradersSchema),
   your_share_in_team: z.string(),
+  price_per_change_team: z.number(),
 });
 
 export type NewUserBalanceProps = z.infer<typeof NewUserBalanceSchema>;

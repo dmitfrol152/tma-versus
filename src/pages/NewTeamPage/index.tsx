@@ -100,6 +100,12 @@ export default function NewTeamPage() {
           >
             Click here
           </NewButtonUi>
+          {
+            // TODO: delete
+            <span className={styles.team__text}>
+              Выберите команду, чтобы отобразились данные
+            </span>
+          }
         </div>
       </div>
     );

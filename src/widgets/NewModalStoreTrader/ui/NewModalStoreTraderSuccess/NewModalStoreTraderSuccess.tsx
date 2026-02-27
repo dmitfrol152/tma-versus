@@ -8,6 +8,7 @@ export function NewModalStoreTraderSuccess({
   handleContinue,
   handleCloseModal,
   IconClose,
+  earnDay,
 }: NewModalStoreTraderSuccessProps) {
   return (
     <div className="container">
@@ -25,8 +26,9 @@ export function NewModalStoreTraderSuccess({
             Purchase completed
           </p>
           <p className={styles.modalStoreTraderSuccess__description}>
-            Congratulations! You have purchased a trader that will bring 4,200
-            coins per day. It will be automatically placed in a free slot.
+            Congratulations! You have purchased a trader that will bring{" "}
+            {earnDay.toLocaleString("en-US")} coins per day. It will be
+            automatically placed in a free slot.
           </p>
           <div className={styles.modalStoreTraderSuccess__btn}>
             <NewButtonUi

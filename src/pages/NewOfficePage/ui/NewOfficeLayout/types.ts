@@ -14,7 +14,7 @@ export const NewOfficeLayoutSchema = z.object({
   userBalanse: NewUserBalanceSchema,
   officeQuery: newFetchOfficeSchema,
   user: NewInfoPersonSchema,
-  prize: z.number(),
+  // prize: z.number(),
   handleClaimBank: z.function({
     input: [],
     output: z.void(),

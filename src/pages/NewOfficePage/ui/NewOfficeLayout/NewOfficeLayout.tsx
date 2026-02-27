@@ -16,7 +16,7 @@ export function NewOfficeLayout({
   userBalanse,
   officeQuery,
   user,
-  prize,
+  // prize,
   handleClaimBank,
   handleOpenModalInventar,
   isOpenModal,
@@ -58,7 +58,8 @@ export function NewOfficeLayout({
         <NewInfoBlockYourSafe
           buttonName="Claim"
           activeTeam={activeTeam}
-          prize={prize}
+          // prize={prize}
+          // user={user}
           userBalanse={userBalanse}
           handleClaimBank={handleClaimBank}
         />

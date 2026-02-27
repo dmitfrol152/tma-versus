@@ -35,6 +35,7 @@ export const NewHomeLayoutDataSchema = z.object({
   isStartTour: z.boolean(),
   stepIndex: z.number(),
   setIsStartTour: z.custom<Dispatch<SetStateAction<boolean>>>(),
+  countForChangeTeam: z.number(),
 });
 
 export type NewHomeLayoutDataProps = z.infer<typeof NewHomeLayoutDataSchema>;

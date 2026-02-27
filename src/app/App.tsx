@@ -29,9 +29,9 @@ export default function App() {
     const tg = window.Telegram?.WebApp;
     if (!tg) return;
 
-    // tg.ready();
-    // tg.expand();
     // tg.requestFullscreen();
+    tg.ready();
+    tg.expand();
     tg.setBackgroundColor("#000000");
     tg.setHeaderColor("#000000");
     tg.disableVerticalSwipes();
