@@ -8,17 +8,24 @@ import { useNewActiveTeamInit } from "@/pages/NewHomePage/model/hooks/useNewActi
 import { useFetchHomePage } from "@/shared/api/newFetchHomePage/model/hooks/useFetchHomePage";
 import { useNewPrizeInit } from "@/pages/NewHomePage/model/hooks/useNewPrizeInit";
 import { NewScrollToUp } from "@/shared/ui/NewScrollToUp/NewScrollToUp";
+import { useNewUseMainPageInit } from "@/pages/NewHomePage/model/hooks/useNewUseMainPageInit";
 
 export const MainLayout = () => {
   const { data: dataHomePage, isSuccess: isSuccessHomePage } =
     useFetchHomePage();
 
-  // init user
+  // init person
   useNewUserInit();
 
   // init user_balanse
   useNewUserBalanseInit(
     dataHomePage ? dataHomePage.user_balance : null,
+    isSuccessHomePage,
+  );
+
+  // init user
+  useNewUseMainPageInit(
+    dataHomePage ? dataHomePage.user : null,
     isSuccessHomePage,
   );
 

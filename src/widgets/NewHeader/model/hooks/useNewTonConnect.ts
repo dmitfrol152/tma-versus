@@ -1,13 +1,18 @@
 import { newPostTonConnectAdress } from "@/shared/api/newPostTonConnectAdress/newPostTonConnectAdress";
+import { setUser } from "@/shared/lib/store/newUserSlice";
 import { newTonConnect } from "@/shared/lib/tonWallet/newTonConnect";
+import type { NewUserProps } from "@/shared/lib/types/NewUser/model/types";
 import { useEffect, useRef, useState } from "react";
+import { useDispatch } from "react-redux";
 
-export function useNewTonConnect() {
+export function useNewTonConnect({ user }: { user: NewUserProps }) {
   const [isWalletError, setIsWalletError] = useState<string | null>(null);
   const [isConnected, setIsConnected] = useState(false);
   const [isWalletOpenModal, setIsWalletOpenModal] = useState<boolean>(false);
 
   const timerRef = useRef<ReturnType<typeof setTimeout>>(null);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const unsubscribeModal = newTonConnect.onModalStateChange((state) => {
@@ -60,6 +65,7 @@ export function useNewTonConnect() {
         }
 
         setIsConnected(true);
+        dispatch(setUser({ ...user, wallet_address: adress }));
       } catch (error) {
         console.error(error);
         setIsConnected(false);
@@ -78,7 +84,7 @@ export function useNewTonConnect() {
         clearTimeout(timerRef.current);
       }
     };
-  }, []);
+  }, [dispatch, user]);
 
   return { openWallet, isWalletError, isConnected, isWalletOpenModal };
 }

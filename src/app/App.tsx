@@ -8,8 +8,8 @@ import { newFetchTelegram } from "@/shared/api/newFetchTelegram/newFetchTelegram
 import { useEffect } from "react";
 import styles from "./App.module.scss";
 import { NewButtonUi } from "@/shared/ui/NewButtonUi";
-import { NewBlockOrientationUI } from "@/shared/ui/NewBlockOrientationUI";
-import { getBlockDevtools } from "@/shared/lib/helpers/getBlockDevtools";
+// import { NewBlockOrientationUI } from "@/shared/ui/NewBlockOrientationUI";
+// import { getBlockDevtools } from "@/shared/lib/helpers/getBlockDevtools";
 
 export default function App() {
   const { tgInitData } = useInitTelegram();
@@ -32,6 +32,7 @@ export default function App() {
     // tg.ready();
     // tg.expand();
     // tg.requestFullscreen();
+    tg.setBackgroundColor("#000000");
 
     const root = document.documentElement;
 
@@ -62,13 +63,13 @@ export default function App() {
     };
   }, []);
 
-  useEffect(() => {
-    getBlockDevtools();
-  }, []);
+  // useEffect(() => {
+  //   getBlockDevtools();
+  // }, []);
 
   return (
     <>
-      <NewBlockOrientationUI />
+      {/* <NewBlockOrientationUI /> */}
       {telegramQueryInit.isError ? (
         <div className={styles.app}>
           <div className={styles.app__error}>

@@ -1,5 +1,6 @@
 import z from "zod";
 import { NewUserBalanceSchema } from "@shared/lib/types/NewUserBalance/model/types";
+import { NewUserSchema } from "../types/NewUser/model/types";
 
 export const NewTeamSliceSchema = z.object({
   teamValue: z.enum(["1", "2"]).nullable(),
@@ -64,3 +65,15 @@ export const NewSelectorPrizeSchema = z.object({
 });
 
 export type NewSelectorPrizeProps = z.infer<typeof NewSelectorPrizeSchema>;
+
+export const NewUserValueSchema = z.object({
+  user: NewUserSchema,
+});
+
+export type NewUserValueProps = z.infer<typeof NewUserValueSchema>;
+
+export const NewUserNameSchema = z.object({
+  userUserName: NewUserValueSchema,
+});
+
+export type NewUserNameProps = z.infer<typeof NewUserNameSchema>;

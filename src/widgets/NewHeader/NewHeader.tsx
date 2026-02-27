@@ -2,6 +2,7 @@ import type {
   NewuserBalanseStoreNameProps,
   NewInfoPersonNameProps,
   NewSelectorProps,
+  NewUserNameProps,
 } from "@/shared/lib/store/types";
 import styles from "./NewHeader.module.scss";
 import { useSelector } from "react-redux";
@@ -19,15 +20,20 @@ export function NewHeader() {
   const userBalanse = useSelector(
     (state: NewuserBalanseStoreNameProps) => state.userBalanseName.userBalanse,
   );
-  const user = useSelector(
+  const person = useSelector(
     (state: NewInfoPersonNameProps) => state.infoPersonName.infoPerson,
+  );
+  const user = useSelector(
+    (state: NewUserNameProps) => state.userUserName.user,
   );
   // const { data: user } = useFetchUser();
 
   const navigate = useNavigate();
 
   const { openWallet, isConnected, isWalletError, isWalletOpenModal } =
-    useNewTonConnect();
+    useNewTonConnect({ user });
+
+  console.log(user);
 
   const handleClickToProfile = () => {
     navigate("/profile");
@@ -46,7 +52,7 @@ export function NewHeader() {
             <NewHeaderName
               activeTeam={activeTeam}
               clan={userBalanse}
-              user={user}
+              user={person}
             />
           </NewButtonUi>
           <NewHeaderWallet
@@ -54,6 +60,7 @@ export function NewHeader() {
             openWallet={openWallet}
             activeTeam={activeTeam}
             userBalanse={userBalanse}
+            userMain={user}
           />
           {isWalletError && (
             <div className={styles.header__error}>

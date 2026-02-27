@@ -6,10 +6,11 @@ import styles from "./NewHeaderWallet.module.scss";
 import clsx from "clsx";
 
 export function NewHeaderWallet({
-  isConnectWallet,
   openWallet,
   activeTeam,
   userBalanse,
+  userMain,
+  isConnectWallet,
 }: NewHeaderWalletProps) {
   const activeClassName =
     activeTeam === "1"
@@ -18,42 +19,36 @@ export function NewHeaderWallet({
         ? styles["clansActive--2"]
         : styles["clansActive--default"];
 
-  if (!isConnectWallet) {
-    return (
-      <NewButtonUi
-        type="button"
-        size="connectWallet"
-        variant="connectWallet"
-        onClickButton={openWallet}
-        teamColor={activeTeam === null ? "default" : activeTeam}
-      >
-        Connect wallet
-      </NewButtonUi>
-    );
-  }
+  const isWalletConnected =
+    isConnectWallet || (userMain && userMain.wallet_address);
 
-  if (isConnectWallet) {
+  if (isWalletConnected) {
     return (
       <div className={clsx(styles.headerWallet, activeClassName)}>
         <div className={styles.headerWallet__inner}>
           <IconCoin className={styles.headerWallet__coin} />
           <span className={styles.headerWallet__info}>
-            {userBalanse ? userBalanse.token_money : "error"}K
+            {userBalanse ? userBalanse.token_money : "0"}K
           </span>
         </div>
         <div className={styles.headerWallet__btn}>
-          <NewButtonUi
-            type="button"
-            size="walletBtn"
-            variant="walletBtn"
-            onClickButton={openWallet}
-          >
+          <div className={styles.headerWallet__btnConnected}>
             <IconWallet className={styles.headerWallet__wallet} />
-          </NewButtonUi>
+          </div>
         </div>
       </div>
     );
   }
 
-  return null;
+  return (
+    <NewButtonUi
+      type="button"
+      size="connectWallet"
+      variant="connectWallet"
+      onClickButton={openWallet}
+      teamColor={activeTeam === null ? "default" : activeTeam}
+    >
+      Connect wallet
+    </NewButtonUi>
+  );
 }
