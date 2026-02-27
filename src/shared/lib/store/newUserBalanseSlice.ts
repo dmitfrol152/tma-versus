@@ -6,6 +6,7 @@ export const initialState: NewuserBalanseStoreValueProps = {
     id: 0,
     token_money: 0,
     game_coin: 0,
+    price_per_change_team: 0,
     team: { id: 0, name: "" },
     can_change_team_for_pay: true,
     my_ofice: {
