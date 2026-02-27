@@ -33,6 +33,8 @@ export default function App() {
     // tg.expand();
     // tg.requestFullscreen();
     tg.setBackgroundColor("#000000");
+    tg.setHeaderColor("#000000");
+    tg.disableVerticalSwipes();
 
     const root = document.documentElement;
 

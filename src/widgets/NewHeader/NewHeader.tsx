@@ -33,8 +33,6 @@ export function NewHeader() {
   const { openWallet, isConnected, isWalletError, isWalletOpenModal } =
     useNewTonConnect({ user });
 
-  console.log(user);
-
   const handleClickToProfile = () => {
     navigate("/profile");
   };

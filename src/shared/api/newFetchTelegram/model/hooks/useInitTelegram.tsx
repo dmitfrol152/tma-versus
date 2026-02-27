@@ -18,6 +18,8 @@ declare global {
         openTelegramLink: (link: string) => void;
         openLink: (link: string) => void;
         setBackgroundColor: (color: string) => void;
+        setHeaderColor: (color: string) => void;
+        disableVerticalSwipes: () => void;
       };
     };
   }

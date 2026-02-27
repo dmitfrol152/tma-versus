@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+html {
+  overscroll-behavior-y: none;
+  height: 100%;
+}
+
 #root {
   display: flex;
   flex-direction: column;
@@ -29,6 +34,7 @@ body {
   font-size: 14px;
   line-height: 16px;
   font-family: variables.$ff-main;
+  overscroll-behavior-y: none;
 }
 
 body [data-tc-modal="true"] {

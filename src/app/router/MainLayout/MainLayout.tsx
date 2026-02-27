@@ -38,6 +38,8 @@ export const MainLayout = () => {
     isSuccessHomePage,
   );
 
+  console.log(dataHomePage);
+
   return (
     <div className={styles.mainLayout}>
       <NewScrollToUp />
