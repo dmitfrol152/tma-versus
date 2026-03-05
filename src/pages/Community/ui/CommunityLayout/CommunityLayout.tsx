@@ -9,6 +9,7 @@ import { NewButtonsChoiceCommunity } from "../NewButtonsChoiceCommunity";
 import { StatisticCommunityLayout } from "../StatisticCommunityLayout";
 import { StructureCommunityLayout } from "../StructureCommunityLayout";
 import { PoolCommunityLayout } from "../PoolCommunityLayout";
+import { NewModalStatusCommunity } from "../NewModalStatusCommunity";
 
 export function CommunityLayout({
   activeTeam,
@@ -22,6 +23,7 @@ export function CommunityLayout({
   GENERAL_ARRAY_COMMUNITY,
   isStartTour,
   stepIndex,
+  isOpenModalStatus,
 }: CommunityLayoutProps) {
   const classNameIcon =
     activeTeam === "1"
@@ -57,6 +59,7 @@ export function CommunityLayout({
         </div>
         <Link
           to={"/"}
+          state={{ onboarding: "start" }}
           className={clsx(styles.communityLayout__onboard, classNameLink)}
         >
           How it works
@@ -68,7 +71,6 @@ export function CommunityLayout({
         // setIsActiveReferalLink={setIsActiveReferalLink}
         inputRef={inputRef}
         handleCopyReferal={handleCopyReferal}
-        copyStatus={copyStatus}
         isRefStep={isRefStep}
       />
       <General
@@ -103,6 +105,7 @@ export function CommunityLayout({
         <PoolCommunityLayout activeTeam={activeTeam} />
       )}
       <div className={styles.communityLayout__shadow}></div>
+      {isOpenModalStatus && <NewModalStatusCommunity copyStatus={copyStatus} />}
     </div>
   );
 }

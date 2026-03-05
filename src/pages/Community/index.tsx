@@ -42,8 +42,13 @@ export default function Community() {
     (state: NewInfoPersonNameProps) => state.infoPersonName.infoPerson,
   );
 
-  const { isActiveReferalLink, copyStatus, handleCopyReferal, inputRef } =
-    useNewReferal({ user });
+  const {
+    isActiveReferalLink,
+    copyStatus,
+    handleCopyReferal,
+    inputRef,
+    isOpenModalStatus,
+  } = useNewReferal({ user });
 
   const { isButtonActiveCommunity, setIsButtonActiveCommunity } =
     useNewActiveButtonsManagerCommunity();
@@ -126,6 +131,7 @@ export default function Community() {
         GENERAL_ARRAY_COMMUNITY={GENERAL_ARRAY_COMMUNITY}
         isStartTour={isStartTour}
         stepIndex={stepIndex}
+        isOpenModalStatus={isOpenModalStatus}
       />
     </>
   );

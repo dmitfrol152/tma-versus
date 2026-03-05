@@ -14,20 +14,22 @@ export function NewClans({
   setIsStartTour,
 }: NewClanProps) {
   return (
-    <div className={styles.clans} data-tour="homePageTeam">
+    <div className={styles.clans}>
       <NewClansList
         activeClan={activeTeam}
         orderedClans={orderedClans}
         isStartTour={isStartTour}
         setIsStartTour={setIsStartTour}
       />
-      <NewClansButtons
-        data={data}
-        activeClan={activeTeam}
-        handleClickTeamOne={handleClickTeamOne}
-        handleClickTeamTwo={handleClickTeamTwo}
-        handleClickChangeTeamConfirm={handleClickChangeTeamConfirm}
-      />
+      <div data-tour="homePageTeam">
+        <NewClansButtons
+          data={data}
+          activeClan={activeTeam}
+          handleClickTeamOne={handleClickTeamOne}
+          handleClickTeamTwo={handleClickTeamTwo}
+          handleClickChangeTeamConfirm={handleClickChangeTeamConfirm}
+        />
+      </div>
     </div>
   );
 }

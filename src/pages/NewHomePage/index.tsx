@@ -89,7 +89,12 @@ export default function NewHomePage() {
         document.body.style.overflow = "";
         setIsStartTour(false);
         setStepIndex(0);
-        navigation("/team", { state: { startTeamTour: true } });
+
+        if (activeTeam === null) {
+          navigation("/office", { state: { startOfficeTour: true } });
+        } else {
+          navigation("/team", { state: { startTeamTour: true } });
+        }
 
         return;
       }
@@ -102,7 +107,7 @@ export default function NewHomePage() {
         return;
       }
     },
-    [navigation],
+    [activeTeam, navigation],
   );
 
   function openStatusModal(status: "success" | "error") {

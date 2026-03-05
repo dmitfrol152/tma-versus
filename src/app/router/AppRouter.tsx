@@ -1,5 +1,5 @@
 import NewOnBoarding from "@/pages/NewOnBoarding";
-import { Navigate, Route, Routes } from "react-router";
+import { Navigate, Route, Routes, useLocation } from "react-router";
 import { lazy } from "react";
 import { MainLayout } from "@/app/router/MainLayout/MainLayout";
 import { useFetchHomePage } from "@/shared/api/newFetchHomePage/model/hooks/useFetchHomePage";
@@ -17,6 +17,8 @@ export default function AppRouter() {
   const { data: dataHomePage, isLoading: isLoadingHomePage } =
     useFetchHomePage();
 
+  const location = useLocation();
+
   if (isLoadingHomePage) {
     return (
       <div className={styles.appRouter__loading}>
@@ -25,7 +27,8 @@ export default function AppRouter() {
     );
   }
 
-  const hasTeam = dataHomePage?.user_balance?.team;
+  const startOnboarding = location.state?.onboarding === "start";
+  const hasTeam = dataHomePage?.user_balance?.team && !startOnboarding;
 
   return (
     <Routes>

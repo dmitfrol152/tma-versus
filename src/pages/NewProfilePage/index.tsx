@@ -20,13 +20,12 @@ export default function NewProfilePage() {
   const { value, setValue, handleChangeButton, isEditing, refField } =
     useNewInputManager(user.nickname);
 
-  const { handleCopyLinkButton, copyStatus } = useNewReferalCopyLink();
+  const { handleCopyLinkButton, copyStatus, isOpenModalStatus } =
+    useNewReferalCopyLink();
 
   const handleWithdrawalButton = () => {
     alert("click withdrawal");
   };
-
-  console.log(user);
 
   const handleShareButton = (url: string) => {
     const tg = window.Telegram?.WebApp;
@@ -60,6 +59,7 @@ export default function NewProfilePage() {
       handleShareButton={handleShareButton}
       handleCopyLinkButton={handleCopyLinkButton}
       copyStatus={copyStatus}
+      isOpenModalStatus={isOpenModalStatus}
     />
   );
 }

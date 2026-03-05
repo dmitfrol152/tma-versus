@@ -5,6 +5,7 @@
   flex-direction: column;
   gap: 10px;
   align-items: center;
+  flex-grow: 1;
 
   &__loading {
     position: fixed;
@@ -33,11 +34,30 @@
     gap: 10px;
   }
 
+  &__default {
+    padding-bottom: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-grow: 1;
+  }
+
+  &__defaultChoice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 5px;
+  }
+
   &__text {
     font-family: variables.$ff-main;
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
     color: variables.$color-milk;
+    text-align: center;
   }
 }

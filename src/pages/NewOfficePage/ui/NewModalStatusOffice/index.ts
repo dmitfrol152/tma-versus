@@ -1,0 +1,1 @@
+export { NewModalStatusOffice } from "./NewModalStatusOffice";

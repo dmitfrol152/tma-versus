@@ -36,8 +36,9 @@ export default function NewOfficePage() {
     return 20;
   });
 
-  // TODO: delete logos errors
-  const [errors, setError] = useState("");
+  const [isOpenModalStatus, setIsOpenModalStatus] = useState<boolean>(false);
+  const [isOpenModalStatusText, setIsOpenModalStatusText] =
+    useState<string>("");
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -182,29 +183,30 @@ export default function NewOfficePage() {
         onSuccess: (data) => {
           console.log("Success:", data);
           queryClient.invalidateQueries({ queryKey: ["homePage"] });
-          // TODO: delete down
-          setError("");
+
+          setIsOpenModalStatus(true);
+          setIsOpenModalStatusText("success");
         },
         onError: (error) => {
           console.error(error.message);
-          // TODO: delete down
-          setError(
-            "Не хватает места в данном офисе или этот трейдер уже используется у вас в офисе",
-          );
-          setIsOpenModal(false);
+
+          setIsOpenModalStatus(true);
+          setIsOpenModalStatusText("error");
         },
       },
     );
   };
 
-  // TODO: delete down
   useEffect(() => {
+    setIsOpenModal(false);
+
     const timerId = setTimeout(() => {
-      setError("");
+      setIsOpenModalStatusText("");
+      setIsOpenModalStatus(false);
     }, 3000);
 
     return () => clearTimeout(timerId);
-  }, [errors]);
+  }, [isOpenModalStatus, setIsOpenModal]);
 
   if (officeQuery.isError) {
     return (
@@ -236,8 +238,6 @@ export default function NewOfficePage() {
   }
 
   if (officeQuery.data && officeQuery.isSuccess) {
-    console.log(officeQuery.data);
-
     return (
       <>
         <Joyride
@@ -285,8 +285,8 @@ export default function NewOfficePage() {
           handleClickAddCoinTrader={handleClickAddCoinTrader}
           isStartTour={isStartTour}
           stepIndex={stepIndex}
-          // TODO: delete down
-          errors={errors}
+          isOpenModalStatusText={isOpenModalStatusText}
+          isOpenModalStatus={isOpenModalStatus}
         />
       </>
     );

@@ -20,9 +20,11 @@ export function NewClansList({
         if (!clan) return "Empty";
 
         const handleCardClick = () => {
-          if (isStartTour) {
+          if (isStartTour && activeClan) {
             setIsStartTour(false);
             navigate("/team", { state: { startTeamTour: true } });
+          } else {
+            return;
           }
         };
 

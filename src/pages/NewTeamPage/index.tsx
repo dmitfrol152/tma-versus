@@ -84,28 +84,28 @@ export default function NewTeamPage() {
     [navigate],
   );
 
+  const handleClickTransfer = () => {
+    navigate("/home");
+  };
+
   if (teamQuery.isError) {
     return (
       <div className={styles.team}>
-        <div className={styles.team__error}>
-          <span className={styles.team__text}>
-            Error fetch data. Please try again.
-          </span>
-          <NewButtonUi
-            type="button"
-            size="textXS"
-            variant="textXS"
-            color="blue"
-            onClickButton={() => teamQuery.refetch()}
-          >
-            Click here
-          </NewButtonUi>
-          {
-            // TODO: delete
+        <div className={styles.team__default}>
+          <div className={styles.team__defaultChoice}>
             <span className={styles.team__text}>
-              Выберите команду, чтобы отобразились данные
+              Для начала выберите команду
             </span>
-          }
+            <NewButtonUi
+              type="button"
+              size="textXS"
+              variant="textXS"
+              color="blue"
+              onClickButton={handleClickTransfer}
+            >
+              Перейти к выбору
+            </NewButtonUi>
+          </div>
         </div>
       </div>
     );

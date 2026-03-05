@@ -20,6 +20,7 @@ export const CommunityLayoutSchema = z.object({
   GENERAL_ARRAY_COMMUNITY: z.array(GeneralArrayCommunitySchema),
   isStartTour: z.boolean(),
   stepIndex: z.number(),
+  isOpenModalStatus: z.boolean(),
 });
 
 export type CommunityLayoutProps = z.infer<typeof CommunityLayoutSchema>;

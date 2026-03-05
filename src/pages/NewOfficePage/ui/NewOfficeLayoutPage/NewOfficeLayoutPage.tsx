@@ -5,6 +5,7 @@ import { TasksLayout } from "../TasksLayout";
 import styles from "./NewOfficeLayoutPage.module.scss";
 import type { NewOfficeLayoutPageProps } from "./types";
 import IconQuestionOffice from "@shared/assets/images/svg/icon-question-office.svg?react";
+import { NewModalStatusOffice } from "../NewModalStatusOffice";
 
 export function NewOfficeLayoutPage({
   activeTeam,
@@ -25,7 +26,8 @@ export function NewOfficeLayoutPage({
   handleClickAddCoinTrader,
   isStartTour,
   stepIndex,
-  errors,
+  isOpenModalStatusText,
+  isOpenModalStatus,
 }: NewOfficeLayoutPageProps) {
   const classNameIcon =
     activeTeam === "1"
@@ -78,8 +80,9 @@ export function NewOfficeLayoutPage({
         />
       )}
       <div className={styles.officeLayoutPage__shadow}></div>
-      // TODO: delete down
-      {errors && <div className={styles.delete}>{errors}</div>}
+      {isOpenModalStatus && (
+        <NewModalStatusOffice payStatus={isOpenModalStatusText} />
+      )}
     </div>
   );
 }

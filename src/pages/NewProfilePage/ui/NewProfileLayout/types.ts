@@ -5,7 +5,7 @@ import z from "zod";
 
 export const CopyStatusLinkProfileSchema = z.object({
   message: z.string(),
-  type: z.enum(["success", "error"]).nullable(),
+  type: z.enum(["success", "error", ""]),
 });
 
 export const NewProfileLayoutSchema = z.object({
@@ -32,6 +32,7 @@ export const NewProfileLayoutSchema = z.object({
     output: z.void(),
   }),
   copyStatus: CopyStatusLinkProfileSchema,
+  isOpenModalStatus: z.boolean(),
 });
 
 export type NewProfileLayoutProps = z.infer<typeof NewProfileLayoutSchema>;

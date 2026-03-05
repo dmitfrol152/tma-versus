@@ -39,7 +39,8 @@ export const NewOfficeLayoutPageSchema = z.object({
   }),
   isStartTour: z.boolean(),
   stepIndex: z.number(),
-  errors: z.string(),
+  isOpenModalStatusText: z.string(),
+  isOpenModalStatus: z.boolean(),
 });
 
 export type NewOfficeLayoutPageProps = z.infer<

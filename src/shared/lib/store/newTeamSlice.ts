@@ -1,8 +1,6 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { NewTeamSliceProps } from "./types";
 
-// TODO: bulls - 1, bears - 2
-
 export const initialState: NewTeamSliceProps = {
   teamValue: null,
 };

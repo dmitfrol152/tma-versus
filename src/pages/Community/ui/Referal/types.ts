@@ -1,6 +1,5 @@
 import type { RefObject } from "react";
 import z from "zod";
-import { CopyReferalLinkSchema } from "../../model/types";
 import { ActiveClanTypeSchema } from "@/shared/lib/types/activeClan";
 
 export const ReferalSchema = z.object({
@@ -12,7 +11,6 @@ export const ReferalSchema = z.object({
     input: [],
     output: z.void(),
   }),
-  copyStatus: CopyReferalLinkSchema,
   isRefStep: z.boolean(),
 });
 

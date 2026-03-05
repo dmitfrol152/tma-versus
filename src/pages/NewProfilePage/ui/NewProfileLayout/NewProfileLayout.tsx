@@ -7,6 +7,7 @@ import { NewButtonUi } from "@/shared/ui/NewButtonUi";
 import { NewStatistics } from "../NewStatistics";
 import { NewInfoStatisticsBlock } from "@/widgets/NewInfoStatisticsBlock";
 import IconShare from "@shared/assets/images/svg/icon-share.svg?react";
+import { NewModalStatusProfile } from "../NewModalStatusProfile";
 
 export function NewProfileLayout({
   value,
@@ -20,6 +21,7 @@ export function NewProfileLayout({
   handleShareButton,
   handleCopyLinkButton,
   copyStatus,
+  isOpenModalStatus,
 }: NewProfileLayoutProps) {
   return (
     <div className={styles.profileLayout}>
@@ -80,13 +82,7 @@ export function NewProfileLayout({
         </div>
       </div>
       <div className={styles.profileLayout__shadow}></div>
-      {copyStatus.type && (
-        <div className={styles.profileLayout__copy}>
-          <span className={styles.profileLayout__copyText}>
-            {copyStatus.message}
-          </span>
-        </div>
-      )}
+      {isOpenModalStatus && <NewModalStatusProfile copyStatus={copyStatus} />}
     </div>
   );
 }

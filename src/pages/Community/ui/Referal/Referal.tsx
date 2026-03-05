@@ -10,7 +10,6 @@ export function Referal({
   activeTeam,
   inputRef,
   handleCopyReferal,
-  copyStatus,
   isRefStep,
 }: ReferalProps) {
   const activeClassName =
@@ -54,11 +53,6 @@ export function Referal({
           </NewButtonUi>
         </div>
       </div>
-      {copyStatus.type && (
-        <div className={styles.referal__copy}>
-          <span className={styles.referal__copyText}>{copyStatus.message}</span>
-        </div>
-      )}
     </div>
   );
 }

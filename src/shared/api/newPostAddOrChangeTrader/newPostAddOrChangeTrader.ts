@@ -10,6 +10,7 @@ export function newPostAddOrChangeTrader({
   const resultBody = {
     first_user_id_trader: currentId,
     ...(targetId && { second_user_id_trader: targetId }),
+    // second_user_id_trader: targetId ?? null,
   };
 
   return fetch(`${BASE_URL}/apply_traders_in_ofice/`, {

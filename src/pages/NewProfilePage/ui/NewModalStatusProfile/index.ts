@@ -1,0 +1,1 @@
+export { NewModalStatusProfile } from "./NewModalStatusProfile";
