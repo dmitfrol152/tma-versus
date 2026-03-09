@@ -58,18 +58,20 @@ export function NewTraderWidget({
           </NewButtonUi>
         )}
         {isChangeBtn && handleOpenModalInventarWithTrader && (
-          <NewButtonUi
-            type="button"
-            size="textXS"
-            variant="textXS"
-            className={styles.traderWidget__button}
-            onClickButton={() => handleOpenModalInventarWithTrader(trader)}
-          >
-            <div className={styles.traderWidget__change}>
-              <IconLeftChange className={styles.traderWidget__changeLeft} />
-              <IconRightChange className={styles.traderWidget__changeRight} />
-            </div>
-          </NewButtonUi>
+          <div className={styles.traderWidget__change}>
+            <NewButtonUi
+              type="button"
+              size="textXS"
+              variant="textXS"
+              className={styles.traderWidget__buttonChange}
+              onClickButton={() => handleOpenModalInventarWithTrader(trader)}
+            >
+              <div className={styles.traderWidget__changeBlock}>
+                <IconLeftChange className={styles.traderWidget__changeLeft} />
+                <IconRightChange className={styles.traderWidget__changeRight} />
+              </div>
+            </NewButtonUi>
+          </div>
         )}
         <NewDayTradersItemLight activeTeam={activeTeam} />
         <NewDayTradersItemWhiteLight />
