@@ -5,6 +5,8 @@ import { NewDayTradersItemLight } from "./ui/NewDayTradersItemLight/ui/NewDayTra
 import { NewDayTradersItemBackground } from "./ui/NewDayTradersItemBackground/ui";
 import { NewButtonUi } from "@/shared/ui/NewButtonUi";
 import { NewDayTradersItemWhiteLight } from "./ui/NewDayTradersItemWhiteLight/ui";
+import IconLeftChange from "@shared/assets/images/svg/icon-change-left.svg?react";
+import IconRightChange from "@shared/assets/images/svg/icon-change-right.svg?react";
 
 export function NewTraderWidget({
   trader,
@@ -14,6 +16,8 @@ export function NewTraderWidget({
   handleClickButton,
   handleOpenModalInventar,
   buttonName,
+  isChangeBtn = false,
+  handleOpenModalInventarWithTrader,
 }: NewTraderUiProps) {
   if (trader && !isLast) {
     return (
@@ -51,6 +55,20 @@ export function NewTraderWidget({
             onClickButton={() => handleClickButton(trader)}
           >
             {buttonName}
+          </NewButtonUi>
+        )}
+        {isChangeBtn && handleOpenModalInventarWithTrader && (
+          <NewButtonUi
+            type="button"
+            size="textXS"
+            variant="textXS"
+            className={styles.traderWidget__button}
+            onClickButton={() => handleOpenModalInventarWithTrader(trader)}
+          >
+            <div className={styles.traderWidget__change}>
+              <IconLeftChange className={styles.traderWidget__changeLeft} />
+              <IconRightChange className={styles.traderWidget__changeRight} />
+            </div>
           </NewButtonUi>
         )}
         <NewDayTradersItemLight activeTeam={activeTeam} />

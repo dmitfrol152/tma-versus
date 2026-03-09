@@ -20,6 +20,13 @@ export const NewTraderUiSchema = z.object({
     })
     .optional(),
   buttonName: z.string().optional(),
+  isChangeBtn: z.boolean().optional(),
+  handleOpenModalInventarWithTrader: z
+    .function({
+      input: [NewUserTradersSchema.optional()],
+      output: z.void(),
+    })
+    .optional(),
 });
 
 export type NewTraderUiProps = z.infer<typeof NewTraderUiSchema>;

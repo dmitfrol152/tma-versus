@@ -3,9 +3,15 @@
 .headerWallet {
   display: flex;
   align-items: center;
+  gap: 4px;
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+  }
 
   &__inner {
-    padding: 11px 18px;
+    padding: 11px 8px;
 
     display: flex;
     align-items: center;

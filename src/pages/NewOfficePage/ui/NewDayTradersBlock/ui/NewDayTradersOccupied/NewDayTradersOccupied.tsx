@@ -17,13 +17,10 @@ export function NewDayTradersOccupied({
   return (
     <ul className={styles.newDayTradersOccupied}>
       {traders
-        .filter((item) => item.isActive)
+        // .filter((item) => item.isActive)
         .map((trader) => {
           return (
-            <li
-              className={styles.newDayTradersOccupied__item}
-              key={trader.trader.id}
-            >
+            <li className={styles.newDayTradersOccupied__item} key={trader.id}>
               <NewTraderWidget trader={trader} activeTeam={activeTeam} />
             </li>
           );

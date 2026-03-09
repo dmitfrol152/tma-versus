@@ -40,6 +40,8 @@ export default function NewOfficePage() {
   const [isOpenModalStatusText, setIsOpenModalStatusText] =
     useState<string>("");
 
+  const [changeTraderFrom, setChangeTraderFrom] = useState<number | null>(null);
+
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -171,14 +173,25 @@ export default function NewOfficePage() {
   };
 
   const handleOpenModalInventar = () => {
+    setChangeTraderFrom(null);
     setIsOpenModal(true);
+  };
+
+  const handleOpenModalInventarWithTrader = (trader?: NewUserTradersProps) => {
+    if (!trader) return;
+
+    setIsOpenModal(true);
+    setChangeTraderFrom(trader.id);
   };
 
   const handleClickAddCoinTrader = (trader?: NewUserTradersProps) => {
     if (!trader) return;
 
     mutationAddorChangeTrader.mutate(
-      { currentId: trader.id },
+      {
+        currentId: trader.id,
+        ...(changeTraderFrom && { targetId: changeTraderFrom }),
+      },
       {
         onSuccess: (data) => {
           console.log("Success:", data);
@@ -287,6 +300,7 @@ export default function NewOfficePage() {
           stepIndex={stepIndex}
           isOpenModalStatusText={isOpenModalStatusText}
           isOpenModalStatus={isOpenModalStatus}
+          handleOpenModalInventarWithTrader={handleOpenModalInventarWithTrader}
         />
       </>
     );

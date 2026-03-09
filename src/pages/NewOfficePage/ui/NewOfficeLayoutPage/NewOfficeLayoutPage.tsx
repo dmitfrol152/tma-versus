@@ -28,6 +28,7 @@ export function NewOfficeLayoutPage({
   stepIndex,
   isOpenModalStatusText,
   isOpenModalStatus,
+  handleOpenModalInventarWithTrader,
 }: NewOfficeLayoutPageProps) {
   const classNameIcon =
     activeTeam === "1"
@@ -68,6 +69,7 @@ export function NewOfficeLayoutPage({
           handleClickAddCoinTrader={handleClickAddCoinTrader}
           isStartTour={isStartTour}
           stepIndex={stepIndex}
+          handleOpenModalInventarWithTrader={handleOpenModalInventarWithTrader}
         />
       )}
       {isButtonActiveOfficeTasks === "tasks" && (

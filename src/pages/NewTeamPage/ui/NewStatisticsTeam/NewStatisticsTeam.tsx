@@ -36,7 +36,6 @@ export function NewStatisticsTeam({
         </div>
 
         <span className={styles.statisticsTeam__time}>
-          Current{" "}
           <span
             className={clsx(styles.statisticsTeam__timeText, classNameLink)}
           >

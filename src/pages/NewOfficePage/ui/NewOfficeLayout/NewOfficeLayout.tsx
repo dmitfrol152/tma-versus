@@ -24,6 +24,7 @@ export function NewOfficeLayout({
   handleClickAddCoinTrader,
   isStartTour,
   stepIndex,
+  handleOpenModalInventarWithTrader,
 }: NewOfficeLayoutProps) {
   const isBasicStep = isStartTour && stepIndex === 0;
   const isSafeStep = isStartTour && stepIndex === 1;
@@ -72,8 +73,9 @@ export function NewOfficeLayout({
           activeTeam={activeTeam}
           activeButton={activeButton}
           setIsButtonActiveDayTraders={setIsButtonActiveDayTraders}
-          traders={userBalanse.my_ofice.traders}
+          userBalanse={userBalanse}
           handleOpenModalInventar={handleOpenModalInventar}
+          handleOpenModalInventarWithTrader={handleOpenModalInventarWithTrader}
         />
       </div>
       <NewHystoryBlock

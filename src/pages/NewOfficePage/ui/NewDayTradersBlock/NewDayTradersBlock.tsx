@@ -9,8 +9,9 @@ export function NewDayTradersBlock({
   activeTeam,
   activeButton,
   setIsButtonActiveDayTraders,
-  traders,
   handleOpenModalInventar,
+  userBalanse,
+  handleOpenModalInventarWithTrader,
 }: NewDayTradersBlockProps) {
   const activeClassName =
     activeTeam === "1"
@@ -33,14 +34,18 @@ export function NewDayTradersBlock({
         activeTeam={activeTeam}
         activeButton={activeButton}
       />
-      {showListAll ? (
+      {showListAll && userBalanse ? (
         <NewDayTradersList
-          traders={traders}
+          userBalanse={userBalanse}
           activeTeam={activeTeam}
           handleOpenModalInventar={handleOpenModalInventar}
+          handleOpenModalInventarWithTrader={handleOpenModalInventarWithTrader}
         />
-      ) : showListOccupied ? (
-        <NewDayTradersOccupied traders={traders} activeTeam={activeTeam} />
+      ) : showListOccupied && userBalanse ? (
+        <NewDayTradersOccupied
+          traders={userBalanse.my_ofice.traders}
+          activeTeam={activeTeam}
+        />
       ) : (
         <div className={styles.dayTradersBlock__empty}>
           <span className={styles.dayTradersBlock__emptyText}>Empty</span>

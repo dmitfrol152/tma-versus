@@ -41,6 +41,10 @@ export const NewOfficeLayoutPageSchema = z.object({
   stepIndex: z.number(),
   isOpenModalStatusText: z.string(),
   isOpenModalStatus: z.boolean(),
+  handleOpenModalInventarWithTrader: z.function({
+    input: [],
+    output: z.void(),
+  }),
 });
 
 export type NewOfficeLayoutPageProps = z.infer<

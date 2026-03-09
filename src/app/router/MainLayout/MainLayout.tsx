@@ -14,6 +14,8 @@ export const MainLayout = () => {
   const { data: dataHomePage, isSuccess: isSuccessHomePage } =
     useFetchHomePage();
 
+  console.log(dataHomePage);
+
   // init person
   useNewUserInit();
 

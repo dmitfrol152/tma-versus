@@ -1,3 +1,5 @@
+@use "/src/shared/styles/global/variables" as variables;
+
 .dayTradersList {
   margin: 0;
   padding: 0;
@@ -11,5 +13,19 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+  }
+
+  &__empty {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__emptyText {
+    font-family: variables.$ff-main;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -1px;
+    color: variables.$color-white;
   }
 }

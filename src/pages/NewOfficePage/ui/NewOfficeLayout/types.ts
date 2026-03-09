@@ -31,6 +31,10 @@ export const NewOfficeLayoutSchema = z.object({
   }),
   isStartTour: z.boolean(),
   stepIndex: z.number(),
+  handleOpenModalInventarWithTrader: z.function({
+    input: [],
+    output: z.void(),
+  }),
 });
 
 export type NewOfficeLayoutProps = z.infer<typeof NewOfficeLayoutSchema>;

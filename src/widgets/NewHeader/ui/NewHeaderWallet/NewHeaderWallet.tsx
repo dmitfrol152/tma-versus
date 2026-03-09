@@ -1,6 +1,7 @@
 import { NewButtonUi } from "@/shared/ui/NewButtonUi";
 import type { NewHeaderWalletProps } from "./types";
 import IconCoin from "@shared/assets/images/svg/icon-coin.svg?react";
+import IconStar from "@shared/assets/images/svg/icon-star.svg?react";
 import IconWallet from "@shared/assets/images/svg/icon-wallet.svg?react";
 import styles from "./NewHeaderWallet.module.scss";
 import clsx from "clsx";
@@ -24,16 +25,36 @@ export function NewHeaderWallet({
 
   if (isWalletConnected) {
     return (
-      <div className={clsx(styles.headerWallet, activeClassName)}>
-        <div className={styles.headerWallet__inner}>
-          <IconCoin className={styles.headerWallet__coin} />
-          <span className={styles.headerWallet__info}>
-            {userBalanse ? userBalanse.token_money : "0"}K
-          </span>
+      <div className={styles.headerWallet}>
+        <div className={clsx(styles.headerWallet, activeClassName)}>
+          <div className={styles.headerWallet__inner}>
+            <IconCoin className={styles.headerWallet__coin} />
+            <span className={styles.headerWallet__info}>
+              {userBalanse
+                ? userBalanse.game_coin.toLocaleString("en-US", {
+                    notation: "compact",
+                    maximumFractionDigits: 1,
+                  })
+                : "0"}
+            </span>
+          </div>
         </div>
-        <div className={styles.headerWallet__btn}>
-          <div className={styles.headerWallet__btnConnected}>
-            <IconWallet className={styles.headerWallet__wallet} />
+        <div className={clsx(styles.headerWallet__wrap, activeClassName)}>
+          <div className={styles.headerWallet__inner}>
+            <IconStar className={styles.headerWallet__coin} />
+            <span className={styles.headerWallet__info}>
+              {userBalanse
+                ? userBalanse.token_money.toLocaleString("en-US", {
+                    notation: "compact",
+                    maximumFractionDigits: 1,
+                  })
+                : "0"}
+            </span>
+          </div>
+          <div className={styles.headerWallet__btn}>
+            <div className={styles.headerWallet__btnConnected}>
+              <IconWallet className={styles.headerWallet__wallet} />
+            </div>
           </div>
         </div>
       </div>
