@@ -1,7 +1,6 @@
-import type { NewInfoPersonProps } from "@/shared/lib/store/types";
 import { useRef, useState } from "react";
 
-export function useNewReferal({ user }: { user: NewInfoPersonProps }) {
+export function useNewReferal({ referalLink }: { referalLink: string }) {
   const inputRef = useRef(null);
   // const [isActiveReferalLink, setIsActiveReferalLink] = useState<string>(
   //   user.invite_link || "",
@@ -12,7 +11,7 @@ export function useNewReferal({ user }: { user: NewInfoPersonProps }) {
   }>({ message: "", type: "" });
   const [isOpenModalStatus, setIsOpenModalStatus] = useState<boolean>(false);
 
-  const isActiveReferalLink = user?.invite_link || "";
+  const isActiveReferalLink = referalLink || "";
 
   const handleCopyReferal = () => {
     if (inputRef.current) {

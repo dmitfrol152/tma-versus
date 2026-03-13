@@ -9,7 +9,6 @@ export const initialState: NewInfoPersonValueProps = {
     received_coins_from_referrals: 0,
     friends_are_inv: 0,
     total_friends_earnings: 0,
-    invite_link: "",
   },
 };
 

@@ -1,1 +1,0 @@
-export { StatisticCommunityLayout } from "./StatisticCommunityLayout";

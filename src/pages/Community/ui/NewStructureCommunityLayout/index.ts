@@ -1,0 +1,1 @@
+export { NewStructureCommunityLayout } from "./NewStructureCommunityLayout";

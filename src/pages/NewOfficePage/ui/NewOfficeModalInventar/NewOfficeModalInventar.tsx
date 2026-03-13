@@ -38,7 +38,7 @@ export function NewOfficeModalInventar({
                 return (
                   <li
                     className={styles.newOfficeModalInventar__item}
-                    key={trader.trader.id}
+                    key={trader.id}
                   >
                     <NewTraderWidget
                       trader={trader}

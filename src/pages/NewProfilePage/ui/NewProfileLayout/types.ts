@@ -33,6 +33,7 @@ export const NewProfileLayoutSchema = z.object({
   }),
   copyStatus: CopyStatusLinkProfileSchema,
   isOpenModalStatus: z.boolean(),
+  referalLink: z.string(),
 });
 
 export type NewProfileLayoutProps = z.infer<typeof NewProfileLayoutSchema>;

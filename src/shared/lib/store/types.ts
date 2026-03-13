@@ -21,7 +21,6 @@ export const NewInfoPersonSchema = z.object({
   received_coins_from_referrals: z.number(),
   friends_are_inv: z.number(),
   total_friends_earnings: z.number(),
-  invite_link: z.string(),
 });
 
 export type NewInfoPersonProps = z.infer<typeof NewInfoPersonSchema>;
@@ -77,3 +76,21 @@ export const NewUserNameSchema = z.object({
 });
 
 export type NewUserNameProps = z.infer<typeof NewUserNameSchema>;
+
+export const NewReferalLinkSliceValueSchema = z.object({
+  invite_link: z.string(),
+});
+
+export const NewReferalLinkSliceSchema = z.object({
+  referalLinkValue: NewReferalLinkSliceValueSchema,
+});
+
+export type NewReferalLinkProps = z.infer<typeof NewReferalLinkSliceSchema>;
+
+export const NewSelectorReferalLinkSchema = z.object({
+  referalLinkName: NewReferalLinkSliceSchema,
+});
+
+export type NewSelectorReferalLinkProps = z.infer<
+  typeof NewSelectorReferalLinkSchema
+>;

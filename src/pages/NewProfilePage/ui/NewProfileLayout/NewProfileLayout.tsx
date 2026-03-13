@@ -22,6 +22,7 @@ export function NewProfileLayout({
   handleCopyLinkButton,
   copyStatus,
   isOpenModalStatus,
+  referalLink,
 }: NewProfileLayoutProps) {
   return (
     <div className={styles.profileLayout}>
@@ -65,7 +66,7 @@ export function NewProfileLayout({
           size="connectWallet"
           variant="connectWallet"
           className={styles.profileLayout__share}
-          onClickButton={() => handleShareButton(user.invite_link)}
+          onClickButton={() => handleShareButton(referalLink)}
         >
           Share
         </NewButtonUi>
@@ -75,7 +76,7 @@ export function NewProfileLayout({
             type="button"
             size="walletBtn"
             variant="walletBtn"
-            onClickButton={() => handleCopyLinkButton(user.invite_link)}
+            onClickButton={() => handleCopyLinkButton(referalLink)}
           >
             <IconShare className={styles.profileLayout__shareIcon} />
           </NewButtonUi>

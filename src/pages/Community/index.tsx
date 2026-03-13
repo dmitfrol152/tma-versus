@@ -1,17 +1,19 @@
 import type {
-  NewInfoPersonNameProps,
   NewSelectorProps,
+  NewSelectorReferalLinkProps,
 } from "@/shared/lib/store/types";
 import { CommunityLayout } from "./ui/CommunityLayout";
 import { useSelector } from "react-redux";
 import { useNewReferal } from "./model/hooks/useNewReferal";
 import { useNewActiveButtonsManagerCommunity } from "./model/hooks/useNewActiveButtonsManagerCommunity";
-import { GENERAL_ARRAY_COMMUNITY } from "@/shared/lib/constants/GENERAL_ARRAY_COMMUNITY";
 import { useCallback, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { Joyride, type CallBackProps } from "react-joyride";
 import { NewTooltipOnboardingUi } from "@/shared/ui/NewTooltipOnboardingUi";
 import { COMMUNITY_TOUR_STEPS } from "./lib/constants/COMMUNITY_TOUR_STEPS";
+import { useNewFetchCommunity } from "@/shared/api/newFetchCommunity/model/hooks/useNewFetchCommunity";
+import { NewButtonUi } from "@/shared/ui/NewButtonUi";
+import styles from "./index.module.scss";
 
 export default function Community() {
   const [offsetOnboarding] = useState<number>(() => {
@@ -29,6 +31,14 @@ export default function Community() {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const {
+    data: dataCommunityPage,
+    isError: isErrorCommunityPage,
+    isLoading: isLoadingCommunityPage,
+    isSuccess: isSuccessCommunityPage,
+    refetch: refetchCommunityPage,
+  } = useNewFetchCommunity();
+
   const [isStartTour, setIsStartTour] = useState<boolean>(
     location.state?.startCommunityTour ?? false,
   );
@@ -38,8 +48,9 @@ export default function Community() {
     (state: NewSelectorProps) => state.teamName.teamValue,
   );
 
-  const user = useSelector(
-    (state: NewInfoPersonNameProps) => state.infoPersonName.infoPerson,
+  const referalLink = useSelector(
+    (state: NewSelectorReferalLinkProps) =>
+      state.referalLinkName.referalLinkValue.invite_link,
   );
 
   const {
@@ -48,7 +59,7 @@ export default function Community() {
     handleCopyReferal,
     inputRef,
     isOpenModalStatus,
-  } = useNewReferal({ user });
+  } = useNewReferal({ referalLink });
 
   const { isButtonActiveCommunity, setIsButtonActiveCommunity } =
     useNewActiveButtonsManagerCommunity();
@@ -93,46 +104,97 @@ export default function Community() {
     [navigate],
   );
 
-  return (
-    <>
-      <Joyride
-        steps={steps}
-        run={isStartTour}
-        continuous
-        showSkipButton
-        callback={handleJoyrideCallback}
-        tooltipComponent={NewTooltipOnboardingUi}
-        styles={{
-          overlay: {
-            backgroundColor: "rgba(0, 0, 0, 0.8)",
-          },
-        }}
-        // scrollDuration={0}
-        floaterProps={{
-          styles: {
-            floaterOpening: {
-              transition: "none",
+  console.log(dataCommunityPage);
+
+  if (isErrorCommunityPage) {
+    return (
+      <div className={styles.community}>
+        <div className={styles.community__error}>
+          <span className={styles.community__text}>
+            Error fetch data. Please try again.
+          </span>
+          <NewButtonUi
+            type="button"
+            size="textXS"
+            variant="textXS"
+            color="blue"
+            onClickButton={() => {
+              if (isErrorCommunityPage) {
+                refetchCommunityPage();
+              }
+            }}
+          >
+            Click here
+          </NewButtonUi>
+        </div>
+      </div>
+    );
+  }
+
+  if (isLoadingCommunityPage) {
+    return (
+      <div className={styles.community__loading}>
+        <span className={styles.community__text}>Loading..</span>
+      </div>
+    );
+  }
+
+  if (isSuccessCommunityPage && dataCommunityPage) {
+    return (
+      <>
+        <Joyride
+          steps={steps}
+          run={isStartTour}
+          continuous
+          showSkipButton
+          callback={handleJoyrideCallback}
+          tooltipComponent={NewTooltipOnboardingUi}
+          styles={{
+            overlay: {
+              backgroundColor: "rgba(0, 0, 0, 0.8)",
             },
-          },
-        }}
-        disableOverlayClose={true}
-        spotlightClicks={true}
-        disableOverlay={true}
-        scrollOffset={offsetOnboarding}
-      />
-      <CommunityLayout
-        activeTeam={activeTeam}
-        isActiveReferalLink={isActiveReferalLink}
-        inputRef={inputRef}
-        handleCopyReferal={handleCopyReferal}
-        copyStatus={copyStatus}
-        isButtonActiveCommunity={isButtonActiveCommunity}
-        setIsButtonActiveCommunity={setIsButtonActiveCommunity}
-        GENERAL_ARRAY_COMMUNITY={GENERAL_ARRAY_COMMUNITY}
-        isStartTour={isStartTour}
-        stepIndex={stepIndex}
-        isOpenModalStatus={isOpenModalStatus}
-      />
-    </>
+          }}
+          // scrollDuration={0}
+          floaterProps={{
+            styles: {
+              floaterOpening: {
+                transition: "none",
+              },
+            },
+          }}
+          disableOverlayClose={true}
+          spotlightClicks={true}
+          disableOverlay={true}
+          scrollOffset={offsetOnboarding}
+        />
+        <CommunityLayout
+          activeTeam={activeTeam}
+          isActiveReferalLink={isActiveReferalLink}
+          inputRef={inputRef}
+          handleCopyReferal={handleCopyReferal}
+          copyStatus={copyStatus}
+          isButtonActiveCommunity={isButtonActiveCommunity}
+          setIsButtonActiveCommunity={setIsButtonActiveCommunity}
+          isStartTour={isStartTour}
+          stepIndex={stepIndex}
+          isOpenModalStatus={isOpenModalStatus}
+          dataCommunityPage={dataCommunityPage}
+        />
+      </>
+    );
+  }
+
+  if (isSuccessCommunityPage && !dataCommunityPage) {
+    return (
+      <div className={styles.community}>
+        <span className={styles.community__text}>Empty</span>
+      </div>
+    );
+  }
+
+  return (
+    <div className={styles.community}>
+      <span className={styles.community__text}>Something went wrong..</span>
+    </div>
   );
 }

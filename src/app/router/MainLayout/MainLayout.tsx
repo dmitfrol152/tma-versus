@@ -9,12 +9,18 @@ import { useFetchHomePage } from "@/shared/api/newFetchHomePage/model/hooks/useF
 import { useNewPrizeInit } from "@/pages/NewHomePage/model/hooks/useNewPrizeInit";
 import { NewScrollToUp } from "@/shared/ui/NewScrollToUp/NewScrollToUp";
 import { useNewUseMainPageInit } from "@/pages/NewHomePage/model/hooks/useNewUseMainPageInit";
+import { useNewFetchReferalLink } from "@/shared/api/newFetchReferalLink/model/hooks/useNewFetchReferalLink";
+import { useNewReferalLinkInit } from "@/pages/Community/model/hooks/useNewReferalLinkInit";
 
 export const MainLayout = () => {
   const { data: dataHomePage, isSuccess: isSuccessHomePage } =
     useFetchHomePage();
 
-  console.log(dataHomePage);
+  const { data: referalLinkData, isSuccess: referalLinkSuccess } =
+    useNewFetchReferalLink();
+
+  //init referal link
+  useNewReferalLinkInit(referalLinkData, referalLinkSuccess);
 
   // init person
   useNewUserInit();

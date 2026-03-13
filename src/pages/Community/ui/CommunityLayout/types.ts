@@ -1,8 +1,8 @@
 import type { Dispatch, RefObject, SetStateAction } from "react";
 import z from "zod";
 import { CopyReferalLinkSchema } from "../../model/types";
-import { GeneralArrayCommunitySchema } from "@/shared/lib/constants/types";
 import { ActiveClanTypeSchema } from "@/shared/lib/types/activeClan";
+import { newFetchCommunitySchema } from "@/shared/api/newFetchCommunity/model/types";
 
 export const CommunityLayoutSchema = z.object({
   activeTeam: ActiveClanTypeSchema,
@@ -17,10 +17,10 @@ export const CommunityLayoutSchema = z.object({
   isButtonActiveCommunity: z.enum(["statistic", "structure", "pool"]),
   setIsButtonActiveCommunity:
     z.custom<Dispatch<SetStateAction<"statistic" | "structure" | "pool">>>(),
-  GENERAL_ARRAY_COMMUNITY: z.array(GeneralArrayCommunitySchema),
   isStartTour: z.boolean(),
   stepIndex: z.number(),
   isOpenModalStatus: z.boolean(),
+  dataCommunityPage: newFetchCommunitySchema,
 });
 
 export type CommunityLayoutProps = z.infer<typeof CommunityLayoutSchema>;

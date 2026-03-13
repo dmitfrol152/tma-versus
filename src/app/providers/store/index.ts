@@ -4,6 +4,7 @@ import newInfoPersonReducer from "@/shared/lib/store/newInfoPersonSlice";
 import newUserBalanseReducer from "@/shared/lib/store/newUserBalanseSlice";
 import newUserReducer from "@/shared/lib/store/newUserSlice";
 import newPrizeReducer from "@/shared/lib/store/newPrizeSlice";
+import newReferalLinkReducer from "@/shared/lib/store/newReferalLinkSlice";
 
 const rootReducer = combineReducers({
   teamName: newTeamReducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   userBalanseName: newUserBalanseReducer,
   userUserName: newUserReducer,
   prizeName: newPrizeReducer,
+  referalLinkName: newReferalLinkReducer,
 });
 
 export default configureStore({

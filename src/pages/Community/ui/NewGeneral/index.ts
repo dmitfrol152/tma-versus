@@ -1,0 +1,1 @@
+export { NewGeneral } from "./NewGeneral";

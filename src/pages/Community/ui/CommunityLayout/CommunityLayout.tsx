@@ -3,12 +3,12 @@ import IconQuestionOffice from "@shared/assets/images/svg/icon-question-office.s
 import clsx from "clsx";
 import type { CommunityLayoutProps } from "./types";
 import { Link } from "react-router";
-import { Referal } from "../Referal";
-import { General } from "../General";
+import { NewReferal } from "../NewReferal";
+import { NewGeneral } from "../NewGeneral";
 import { NewButtonsChoiceCommunity } from "../NewButtonsChoiceCommunity";
-import { StatisticCommunityLayout } from "../StatisticCommunityLayout";
-import { StructureCommunityLayout } from "../StructureCommunityLayout";
-import { PoolCommunityLayout } from "../PoolCommunityLayout";
+import { NewStatisticCommunityLayout } from "../NewStatisticCommunityLayout";
+import { NewStructureCommunityLayout } from "../NewStructureCommunityLayout";
+// import { PoolCommunityLayout } from "../PoolCommunityLayout";
 import { NewModalStatusCommunity } from "../NewModalStatusCommunity";
 
 export function CommunityLayout({
@@ -20,10 +20,10 @@ export function CommunityLayout({
   copyStatus,
   isButtonActiveCommunity,
   setIsButtonActiveCommunity,
-  GENERAL_ARRAY_COMMUNITY,
   isStartTour,
   stepIndex,
   isOpenModalStatus,
+  dataCommunityPage,
 }: CommunityLayoutProps) {
   const classNameIcon =
     activeTeam === "1"
@@ -65,7 +65,7 @@ export function CommunityLayout({
           How it works
         </Link>
       </div>
-      <Referal
+      <NewReferal
         activeTeam={activeTeam}
         isActiveReferalLink={isActiveReferalLink}
         // setIsActiveReferalLink={setIsActiveReferalLink}
@@ -73,9 +73,9 @@ export function CommunityLayout({
         handleCopyReferal={handleCopyReferal}
         isRefStep={isRefStep}
       />
-      <General
+      <NewGeneral
         activeTeam={activeTeam}
-        GENERAL_ARRAY_COMMUNITY={GENERAL_ARRAY_COMMUNITY}
+        dataCommunityPage={dataCommunityPage}
         isGeneralStep={isGeneralStep}
       />
       <div className={styles.communityLayout__buttons}>
@@ -96,13 +96,22 @@ export function CommunityLayout({
         ></div>
       </div>
       {isButtonActiveCommunity === "statistic" && (
-        <StatisticCommunityLayout isButtonsStep={isButtonsStep} />
+        <NewStatisticCommunityLayout
+          isButtonsStep={isButtonsStep}
+          dataCommunityPage={dataCommunityPage}
+        />
       )}
       {isButtonActiveCommunity === "structure" && (
-        <StructureCommunityLayout activeTeam={activeTeam} />
+        <NewStructureCommunityLayout
+          activeTeam={activeTeam}
+          dataCommunityPage={dataCommunityPage}
+        />
       )}
       {isButtonActiveCommunity === "pool" && (
-        <PoolCommunityLayout activeTeam={activeTeam} />
+        // <PoolCommunityLayout activeTeam={activeTeam} />
+        <div className={styles.communityLayout__empty}>
+          <span className={styles.communityLayout__emptyText}>Empty</span>
+        </div>
       )}
       <div className={styles.communityLayout__shadow}></div>
       {isOpenModalStatus && <NewModalStatusCommunity copyStatus={copyStatus} />}

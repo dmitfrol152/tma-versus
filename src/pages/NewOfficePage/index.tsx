@@ -165,6 +165,7 @@ export default function NewOfficePage() {
         console.log("Success:", data);
         queryClient.invalidateQueries({ queryKey: ["user"] });
         queryClient.invalidateQueries({ queryKey: ["homePage"] });
+        queryClient.invalidateQueries({ queryKey: ["office"] });
       },
       onError: (error) => {
         console.error(error.message);
@@ -187,11 +188,21 @@ export default function NewOfficePage() {
   const handleClickAddCoinTrader = (trader?: NewUserTradersProps) => {
     if (!trader) return;
 
+    const payload = changeTraderFrom
+      ? {
+          currentId: changeTraderFrom,
+          targetId: trader.id,
+        }
+      : {
+          currentId: trader.id,
+        };
+
     mutationAddorChangeTrader.mutate(
-      {
-        currentId: trader.id,
-        ...(changeTraderFrom && { targetId: changeTraderFrom }),
-      },
+      // {
+      //   currentId: trader.id,
+      //   ...(changeTraderFrom && { targetId: changeTraderFrom }),
+      // },
+      payload,
       {
         onSuccess: (data) => {
           console.log("Success:", data);

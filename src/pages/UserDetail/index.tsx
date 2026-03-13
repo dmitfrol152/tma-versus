@@ -1,4 +1,4 @@
-import { getUserDetail } from "@/shared/lib/helpers/getUserDetail";
+// import { getUserDetail } from "@/shared/lib/helpers/getUserDetail";
 import { useParams } from "react-router";
 import styles from "./index.module.scss";
 import { ButtonBackCommunity } from "./ui/ButtonBackCommunity";
@@ -15,14 +15,14 @@ export default function UserDetail() {
 
   if (!nickname) return;
 
-  const user = getUserDetail(nickname, Number(layerNumber));
+  // const user = getUserDetail(nickname, Number(layerNumber));
 
-  if (!user)
-    return (
-      <div className={styles.userDetail}>
-        <span className={styles.userDetail__text}> User not found</span>
-      </div>
-    );
+  // if (!user)
+  //   return (
+  //     <div className={styles.userDetail}>
+  //       <span className={styles.userDetail__text}> User not found</span>
+  //     </div>
+  //   );
 
   // TODO: нужна отдельная ручка на конкретного пользака
 
